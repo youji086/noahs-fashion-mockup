@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>Reserve_Confirm</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/header.css">
+<link rel="stylesheet" href="./css/reserve_confirm.css">
+<link rel="stylesheet" href="./css/footer.css">
+<link rel="stylesheet" href="./css/menu.css">
+<script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+<header>
+<h1><a href="https://noahs.tokyo/ja/fashion/noahs_fashion.php">Noah's Fashion</a></h1>
+<div id="nav-toggle">
+  <div><span></span><span></span><span></span></div>
+</div>
+<div id='gloval-nav'>
+  <nav>
+    <ul>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_edit/user_profile.php'>プロフィール</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_edit/user_message.php'>メッセージ</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_edit/user_survey.php'>アンケート</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_edit/reserve.php'>予約確認</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_edit/help.php'>ヘルプ</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_login.php'>ログイン</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/user_edit/user_logout.php'>ログアウト</a></li>
+      <li><a href='https://noahs.tokyo/ja/fashion/fashionista_login.php'>ファッショニスタの方</a></li>
+    </ul>
+  </nav>
+</div>
+</header>
+<main>
+  <div class="wrap">
+    <h1 class="title">ご予約内容確認</h1>
+    <div class="card-fshnst">
+      <img src='./fashionista_edit/fashionist_images/woman-sample_1.jpg' class="fshnst-img">
+      <div class="card-fshnst-r-elm">
+        <p class="item-fshnst">ファッショニスタ</p>
+        <p class="fshnst-name">あいうえおかきくけこさしすせそ</p>
+      </div>
+    </div>
+    <div class="subwrap">
+      <p class="item">メインエリア</p>
+      <p class="value">原宿</p>
+      <p class="item">日時</p>
+      <p class="value">
+        2020/12/20(月)<br class="newline">
+        13:00 ~ 15:00</p>
+      <hr width="100%" style="margin-bottom: 20px">
+      <p class="item">価格</p>
+      <p class="value">¥ 3,000 / 時間</p>
+      <p class="item">所要時間</p>
+      <p class="value">2.0時間</p>
+      <hr width="100%" style="margin-bottom: 20px">
+      <p class="item-total">合計(税込)</p>
+      <p class="total">¥ 6,000</p>
+    </div>
+    <form id="xxx" action="#" method="post">
+      <input type="button" id="checkout" value="お支払い手続きへ" style="cursor: pointer;">
+    </form>
+    <span class="precaution">クレジットカードでのお支払いのみに対応しております</span>
+  </div>
+</main>
+<footer><a href='https://noahs.tokyo/ja/fashion/service_term.php'>利用規約</a></br>
+  <a href='https://noahs.tokyo/ja/fashion/privacy_policy.php'>プライバシーポリシーについて</a></br>
+  <a href='https://noahs.tokyo/ja/fashion/personal_data.php'>個人情報保護方針について</a></br>
+  <a href='specified_commercial.php'>特定商取引法について</a></br>
+  <a href='info.php'>お問い合わせ</a></footer>
+<!-- ハンバーガーメニュー --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script> 
+<script type="text/javascript">
+  (function($) {
+  $(function () {
+    $('#nav-toggle').on('click', function() {
+      $('body').toggleClass('open');
+    });
+  });
+})(jQuery);
+</script> 
+<!-- ハンバーガーメニューここまで --> 
+<script type="text/javascript">
+ var stripe = Stripe('pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8');
+
+ var botton = document.getElementById("checkout");
+ botton.onclick = function() {
+   stripe.redirectToCheckout({
+    // Make the id field from the Checkout Session creation API response
+    // available to this file, so you can provide it as parameter here
+    // instead of the {{CHECKOUT_SESSION_ID}} placeholder.
+    sessionId: "cs_test_PBS3VwpQ3cCAvHo5ayEOPUNoRIgbx82Tzc0LlBuUGsKZqEyZ10bt6W0q"
+   }).then(function (result) {
+    // If `redirectToCheckout` fails due to a browser or network
+    // error, display the localized error message to your customer
+    // using `result.error.message`.
+   });
+};
+
+
+ </script>
+</body>
+</html>

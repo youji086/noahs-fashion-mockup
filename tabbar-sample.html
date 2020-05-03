@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <title>Reserve_Infomation</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="stylesheet" href="./css/reserve_infomation.css" />
+  <link rel="stylesheet" href="./css/tabbar.css" />
+  <script src="https://js.stripe.com/v3/"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+  <!-- ヘッダーここから -->
+  <header id="header">
+    <div id="wrap-header">
+      <h1 id="logo">Noah's Fashion</h1>
+      <nav id="menu">
+        <ul>
+          <li>
+            <a href="#" aria-label="探す" title="探す" class="active-menu"><span aria-hidden="true" class="icon-search"></span><span class="menu-search">探す</span></a>
+          </li>
+          <li>
+            <a href="#" aria-label="お気に入り" title="お気に入り"><span aria-hidden="true" class="icon-heart-o"></span><span class="menu-favorite">お気に入り</span></a>
+          </li>
+          <li>
+            <a href="#" aria-label="メッセージ" title="メッセージ"><span aria-hidden="true" class="icon-commenting-o"></span><span class="menu-message">メッセージ</span></a>
+          </li>
+          <li>
+            <a href="#" aria-label="予約確認" title="予約確認"><span aria-hidden="true" class="icon-event_note"></span><span class="menu-schedule">予約確認</span></a>
+          </li>
+          <li>
+            <a href="#" aria-label="マイページ" title="マイページ"><span aria-hidden="true" class="icon-person_outline"></span><span class="menu-mypage">マイページ</span></a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- ヘッダーここまで -->
+  <!-- メインここから -->
+  <main>
+    <div class="wrap">
+      <h1 class="title">ご予約詳細</h1>
+      <div class="wrap-fshnst">
+        <img src="./fashionista_edit/fashionist_images/woman-sample_1.jpg" class="fshnst-img" />
+        <p class="fshnst-name">あいうえおかきくけこさしすせそ</p>
+      </div>
+      <div class="card">
+        <p class="item">予約番号</p>
+        <p class="value">0000-0000-0000</p>
+        <hr />
+        <p class="item">実施状況</p>
+        <p class="value">未実施</p>
+        <hr />
+        <p class="item">実施日時</p>
+        <p class="value">
+            2020/12/20(月)<br class="newline" />
+            13:00 ~ 15:00
+          </p>
+        <hr />
+        <p class="item">実施場所</p>
+        <p class="value">原宿</p>
+        <hr />
+        <p class="item">価格</p>
+        <p class="value">¥ 3,000 / 時間</p>
+        <hr />
+        <p class="item">所要時間</p>
+        <p class="value">2.0時間</p>
+        <hr />
+        <p class="item">合計(税込)</p>
+        <p class="value">¥ 6,000</p>
+        <hr />
+        <p class="item">予約日</p>
+        <p class="value">2020/11/29(日)</p>
+      </div>
+    </div>
+  </main>
+  <!-- メインここまで -->
+  <!-- テスト用にフッター付けてます -->
+  <footer style="height: 1000px;"></footer>
+  <script>
+    // メニューのアクティブ項目にcssを追加
+    $('#menu li a').click(function () {
+      $('#menu li a').removeClass('active-menu');
+      $(this).addClass("active-menu");
+    });
+
+    // ロゴのクリックイベント（探すページをクリックする）
+    $('#logo').click(function () {
+      $('.menu-search').parent('a').click();
+    });
+
+    // ヘッダー固定
+    (function () {
+      const target = document.getElementById('header'),
+        height = 80;
+      let offset = 0,
+        lastPosition = 0,
+        ticking = false;
+
+      function onScroll() {
+        if (lastPosition > height) {
+          if (lastPosition > offset) {
+            target.classList.add('head-animation');
+          } else {
+            target.classList.remove('head-animation');
+          }
+          offset = lastPosition;
+        }
+      }
+
+      window.addEventListener('scroll', function (e) {
+        lastPosition = window.scrollY;
+        if (!ticking) {
+          window.requestAnimationFrame(function () {
+            onScroll(lastPosition);
+            ticking = false;
+          });
+          ticking = true;
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
