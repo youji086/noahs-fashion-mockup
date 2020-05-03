@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* main */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;/*追加（橋本）*/
+}
+
+main {
+  flex: 1;
+}
+
+ul, ol {
+  list-style: none;
+  padding-inline-start: 0px;/*ulの初期値リセット*/
+}
+
+p, dt, dd {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+h1 {
+  font-size: 2.4rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+}
+
+h3 {
+  font-size: 2.3rem;
+}
+
+@media screen and (min-width: 769px) {
+  h1 {
+    font-size: 3.6rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  h3 {
+    font-size: 3rem;
+  }
+}

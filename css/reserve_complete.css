@@ -1,0 +1,134 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*====================================================*/
+/* アイコンフォント */
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?kertwe');
+  src:  url('fonts/icomoon.eot?kertwe#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?kertwe') format('truetype'),
+    url('fonts/icomoon.woff?kertwe') format('woff'),
+    url('fonts/icomoon.svg?kertwe#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-timer:before {
+  content: "\e900";
+}
+.icon-event_note:before {
+  content: "\e901";
+}
+.icon-person_outline:before {
+  content: "\e902";
+}
+.icon-check_circle_outline:before {
+  content: "\e903";
+}
+.icon-search:before {
+  content: "\e904";
+}
+.icon-heart-o:before {
+  content: "\f08a";
+}
+.icon-commenting-o:before {
+  content: "\f27b";
+}
+.icon-coin-yen:before {
+  content: "\e93e";
+}
+
+/*====================================================*/
+
+main div.wrap {
+  padding: 0 10px 40px;
+  /*max-width: 769px;*/
+  max-width: 480px;
+  margin: auto;
+}
+
+main p {
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 15px 0 10px;
+}
+
+.icon-check_circle_outline {
+  display: block;
+  font-size: 1000%;
+  font-weight: normal;
+  text-align: center;
+  color: #007AFF;
+  padding-top: 30px;
+}
+
+.precaution {
+  color: #F5000B;
+  margin-top: 30px;
+}
+
+.card-reserve-complete {
+  background-color: #FFFCEF;
+  padding: 20px;
+  margin: 20px 0;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16);
+}
+.reserve-number-item {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.reserve-number-value {
+  font-size: 2.2rem;
+  font-weight: bold;
+  padding: 0 0 20px;
+}
+
+
+@media screen and (min-width: 769px) {
+  main p {
+    font-size: 1.8rem;
+  }
+
+  .title {
+    font-size: 2.8rem;
+    padding-bottom: 15px;
+  }
+
+  .card-reserve-complete {
+    margin: 30px 0;
+    padding: 20px 30px;
+  }
+  .reserve-number-item {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+  .reserve-number-value {
+    font-size: 2.4rem;
+    text-align: center;
+  }
+}

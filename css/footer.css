@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+footer {
+  background-color: black;
+  height: 180px;
+  width: 100%;
+}
+footer p {
+  color: white;
+}
