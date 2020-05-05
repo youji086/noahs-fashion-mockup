@@ -13,19 +13,26 @@ body {
   display: flex;
   flex-flow: column;
   min-height: 100vh;
-  font-family: "Hiragino Kaku Gothic ProN", "メイリオ", "ＭＳ Ｐゴシック", sans-serif;/*追加（橋本）*/
+  font-family: Lato, "Noto Sans JP", "游ゴシック Medium", "游ゴシック体",
+    "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN",
+    "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック",
+    "MS PGothic", sans-serif;
 }
 
 main {
   flex: 1;
+  padding-top: 10px;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
-  padding-inline-start: 0px;/*ulの初期値リセット*/
+  padding-inline-start: 0px; /*ulの初期値リセット*/
 }
 
-p, dt, dd {
+p,
+dt,
+dd {
   font-size: 1.6rem;
   line-height: 1.5;
 }
@@ -41,7 +48,26 @@ h2 {
 h3 {
   font-size: 2.3rem;
 }
-
+/* aタグリセット */
+a:link {
+  color: #000000;
+  text-decoration: none;
+}
+a:visited {
+  color: #000000;
+  text-decoration: none;
+}
+a:hover {
+  color: #f54ea2;
+  text-decoration: none;
+}
+a img {
+  border-width: 0px;
+  border-style: none;
+  border-color: #fff;
+  background: transparent;
+}
+/*====================================================*/
 @media screen and (min-width: 769px) {
   h1 {
     font-size: 3.6rem;

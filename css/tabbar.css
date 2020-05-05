@@ -5,12 +5,16 @@
 @font-face {
   font-family: 'icomoon';
   src: url('fonts/icomoon.eot?dbv202');
-  src: url('fonts/icomoon.eot?dbv202#iefix') format('embedded-opentype'), url('fonts/icomoon.ttf?dbv202') format('truetype'), url('fonts/icomoon.woff?dbv202') format('woff'), url('fonts/icomoon.svg?dbv202#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?dbv202#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?dbv202') format('truetype'),
+    url('fonts/icomoon.woff?dbv202') format('woff'),
+    url('fonts/icomoon.svg?dbv202#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
-[class^="icon-"], [class*=" icon-"] {
+[class^='icon-'],
+[class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
   speak: none;
@@ -24,28 +28,28 @@
   -moz-osx-font-smoothing: grayscale;
 }
 .icon-timer:before {
-  content: "\e900";
+  content: '\e900';
 }
 .icon-event_note:before {
-  content: "\e901";
+  content: '\e901';
 }
 .icon-person_outline:before {
-  content: "\e902";
+  content: '\e902';
 }
 .icon-check_circle_outline:before {
-  content: "\e903";
+  content: '\e903';
 }
 .icon-search:before {
-  content: "\e904";
+  content: '\e904';
 }
 .icon-heart-o:before {
-  content: "\f08a";
+  content: '\f08a';
 }
 .icon-commenting-o:before {
-  content: "\f27b";
+  content: '\f27b';
 }
 .icon-coin-yen:before {
-  content: "\e93e";
+  content: '\e93e';
 }
 /*====================================================*/
 /* aタグリセット */
@@ -58,7 +62,7 @@ a:visited {
   text-decoration: none;
 }
 a:hover {
-  color: #F54EA2;
+  color: #f54ea2;
   text-decoration: none;
 }
 a img {
@@ -74,7 +78,8 @@ a img {
   width: 100vw;
   box-sizing: border-box;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
-  background-color: #FFFFFF;
+  background-color: #ffffff;
+  z-index: 100;
 }
 #wrap-header {
   width: 100%;
@@ -95,7 +100,7 @@ a img {
   position: fixed;
   left: 0;
   bottom: 0;
-  background-color: #FFFFFF;
+  background-color: #ffffff;
   box-shadow: 0 -2px 2px rgba(0, 0, 0, 0.16);
 }
 #menu ul {
@@ -107,7 +112,7 @@ a img {
   height: 100%;
 }
 #menu a {
-  color: #9A9A9A;
+  color: #9a9a9a;
   display: flex;
   height: 100%;
   justify-content: center;
@@ -115,17 +120,17 @@ a img {
   flex-direction: column;
 }
 #menu a:hover {
-  color: #F54EA2;
+  color: #f54ea2;
 }
-#menu span[class^="icon-"] {
-  font-size: 2.0rem;
+#menu span[class^='icon-'] {
+  font-size: 2rem;
 }
-#menu span[class^="menu-"] {
+#menu span[class^='menu-'] {
   font-size: 1.2rem;
 }
 
 #menu li a.active-menu {
-  color: #F54EA2;
+  color: #f54ea2;
 }
 
 @media screen and (min-width: 769px) {
@@ -133,7 +138,7 @@ a img {
     height: 80px;
     position: fixed;
     top: 0px;
-    transition: .7s cubic-bezier(.4, 0, .2, 1);
+    transition: 0.7s cubic-bezier(0.4, 0, 0.2, 1);
   }
   .head-animation {
     transform: translateY(-150%);
