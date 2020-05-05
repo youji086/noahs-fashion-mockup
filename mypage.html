@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>マイページ</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/star-rating-svg.css" />
+    <link rel="stylesheet" href="./css/mypage.css" />
+    <link rel="stylesheet" href="./css/tabbar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">マイページ</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <!-- メインここから -->
+    <main>
+      <div class="wrap">
+        <a href="#" aria-label="写真登録" title="写真登録" class="register-img">
+          <img
+            src="./fashionista_edit/fashionist_images/woman-sample_1.jpg"
+            class="fshnst-img"
+          />
+          <div class="mark-register">＋</div></a
+        >
+        <p class="fshnst-name">あいうえおかきくけこ</p>
+        <div id="wrap-rating">
+          <div id="rating-item">評価</div>
+          <div class="star-rating-valuation star-rating"></div>
+          <div id="rating-value">3.5</div>
+        </div>
+        <ul class="btn-profile-edit">
+          <li><a href="#">プロフィール編集</a></li>
+          <li><a href="#">スタイリング要望</a></li>
+        </ul>
+        <ul class="wrap-items">
+          <li><a href="#">お知らせ</a></li>
+          <li><a href="#">ログイン情報確認・変更</a></li>
+          <li><a href="#">禁止事項</a></li>
+          <li><a href="#">ヘルプ</a></li>
+          <li><a href="#">お問い合わせ</a></li>
+        </ul>
+        <ul class="wrap-items">
+          <li><a href="#">What’s Noah’s Fashion</a></li>
+          <li><a href="#">利用規約</a></li>
+          <li><a href="#">プライバシーポリシー</a></li>
+          <li><a href="#">個人情報取り扱いについて</a></li>
+          <li><a href="#">特定商取引について</a></li>
+        </ul>
+        <ul class="wrap-items">
+          <li><a href="#">退会</a></li>
+          <li><a href="#">ログアウト</a></li>
+        </ul>
+      </div>
+    </main>
+    <!-- メインここまで -->
+    <!-- jsファイルの読み込み -->
+    <script src="./js/jquery.star-rating-svg.js"></script>
+    <script src="./js/rating.js"></script>
+    <!-- jsファイルの読み込みここまで -->
+    <script>
+      // メニューのアクティブ項目にcssを追加
+      $('#menu li a').click(function () {
+        $('#menu li a').removeClass('active-menu');
+        $(this).addClass('active-menu');
+      });
+
+      // ロゴのクリックイベント（探すページをクリックする）
+      $('#logo').click(function () {
+        $('.menu-search').parent('a').click();
+      });
+
+      // ヘッダー固定
+      (function () {
+        const target = document.getElementById('header'),
+          height = 80;
+        let offset = 0,
+          lastPosition = 0,
+          ticking = false;
+
+        function onScroll() {
+          if (lastPosition > height) {
+            if (lastPosition > offset) {
+              target.classList.add('head-animation');
+            } else {
+              target.classList.remove('head-animation');
+            }
+            offset = lastPosition;
+          }
+        }
+
+        window.addEventListener('scroll', function (e) {
+          lastPosition = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              onScroll(lastPosition);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
