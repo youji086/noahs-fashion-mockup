@@ -1,64 +1,6 @@
 @charset "UTF-8";
 /* CSS Document */
 /*====================================================*/
-/* アイコンフォント */
-@font-face {
-  font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?r97kta');
-  src: url('fonts/icomoon.eot?r97kta#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?r97kta') format('truetype'),
-    url('fonts/icomoon.woff?r97kta') format('woff'),
-    url('fonts/icomoon.svg?r97kta#icomoon') format('svg');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^='icon-'],
-[class*=' icon-'] {
-  /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: 'icomoon' !important;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-
-  /* Better Font Rendering =========== */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.icon-timer:before {
-  content: '\e900';
-}
-.icon-event_note:before {
-  content: '\e901';
-}
-.icon-person_outline:before {
-  content: '\e902';
-}
-.icon-check_circle_outline:before {
-  content: '\e903';
-}
-.icon-search:before {
-  content: '\e904';
-}
-.icon-heart-o:before {
-  content: '\f08a';
-}
-.icon-commenting-o:before {
-  content: '\f27b';
-}
-.icon-coin-yen:before {
-  content: '\e93e';
-}
-.icon-plus:before {
-  content: '\ea0a';
-}
-
-/*====================================================*/
 /* aタグリセット */
 a:link {
   color: #000000;

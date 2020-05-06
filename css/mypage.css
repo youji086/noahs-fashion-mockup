@@ -128,7 +128,7 @@ main .wrap {
 
 @media screen and (min-width: 769px) {
   main .wrap {
-    max-width: 480px;
+    max-width: 1000px;
     margin: 0 auto;
   }
 
@@ -147,13 +147,19 @@ main .wrap {
     color: #ffffff;
   }
 
+  .btn-profile-edit li a {
+    font-size: 1.6rem;
+  }
   .btn-profile-edit li a:hover {
     background-color: #f54ea2;
     color: #ffffff;
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 
   .wrap-items {
     border-radius: 15px;
+  }
+  .wrap-items li a {
+    font-size: 1.8rem;
   }
 }
