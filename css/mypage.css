@@ -24,18 +24,23 @@ main .wrap {
 }
 .mark-register {
   display: block;
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background-color: #ffffff;
-  font-size: 2.4rem;
-  font-weight: bold;
   position: relative;
-  text-align: center;
-  color: #f54ea2;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
-  top: -35px;
+  top: -36px;
+  box-sizing: border-box;
   margin: 0 0 0 auto;
+}
+.mark-register .icon-plus {
+  font-size: 1.8rem;
+  font-weight: normal;
+  color: #f54ea2;
+  position: relative;
+  top: 9px;
+  left: 9px;
 }
 
 .fshnst-name {
@@ -71,6 +76,7 @@ main .wrap {
   display: flex;
   width: 80px;
   justify-content: center;
+  padding-left: 5px;
 }
 
 .btn-profile-edit {
@@ -124,6 +130,27 @@ main .wrap {
   main .wrap {
     max-width: 480px;
     margin: 0 auto;
+  }
+
+  .register-img {
+    margin: 10px auto;
+  }
+  .mark-register,
+  .icon-plus,
+  .btn-profile-edit li a {
+    transition: all 0.5s ease;
+  }
+  .register-img:hover .mark-register {
+    background-color: #f54ea2;
+  }
+  .register-img:hover .icon-plus {
+    color: #ffffff;
+  }
+
+  .btn-profile-edit li a:hover {
+    background-color: #f54ea2;
+    color: #ffffff;
+    font-size: 1.5rem;
   }
 
   .wrap-items {

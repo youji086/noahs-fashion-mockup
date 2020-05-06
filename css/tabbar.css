@@ -4,15 +4,16 @@
 /* アイコンフォント */
 @font-face {
   font-family: 'icomoon';
-  src: url('fonts/icomoon.eot?dbv202');
-  src: url('fonts/icomoon.eot?dbv202#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?dbv202') format('truetype'),
-    url('fonts/icomoon.woff?dbv202') format('woff'),
-    url('fonts/icomoon.svg?dbv202#icomoon') format('svg');
+  src: url('fonts/icomoon.eot?r97kta');
+  src: url('fonts/icomoon.eot?r97kta#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?r97kta') format('truetype'),
+    url('fonts/icomoon.woff?r97kta') format('woff'),
+    url('fonts/icomoon.svg?r97kta#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
+
 [class^='icon-'],
 [class*=' icon-'] {
   /* use !important to prevent issues with browser extensions that change fonts */
@@ -23,10 +24,12 @@
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 .icon-timer:before {
   content: '\e900';
 }
@@ -51,6 +54,10 @@
 .icon-coin-yen:before {
   content: '\e93e';
 }
+.icon-plus:before {
+  content: '\ea0a';
+}
+
 /*====================================================*/
 /* aタグリセット */
 a:link {
