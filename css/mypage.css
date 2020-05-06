@@ -126,14 +126,30 @@ main .wrap {
   margin-bottom: 100px;
 }
 
+.hr-items {
+  display: none;
+}
+
 @media screen and (min-width: 769px) {
   main .wrap {
+    width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .content-left {
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+  }
+  .content-right {
+    box-sizing: border-box;
+    width: calc(50% - 10px);
+    padding-right: 20px;
   }
 
   .register-img {
-    margin: 10px auto;
+    margin: 20px auto;
   }
   .mark-register,
   .icon-plus,
@@ -147,6 +163,15 @@ main .wrap {
     color: #ffffff;
   }
 
+  .btn-profile-edit {
+    flex-direction: column;
+  }
+  .btn-profile-edit li {
+    width: 100%;
+  }
+  .btn-profile-edit li:first-of-type {
+    margin-bottom: 20px;
+  }
   .btn-profile-edit li a {
     font-size: 1.6rem;
   }
@@ -159,7 +184,19 @@ main .wrap {
   .wrap-items {
     border-radius: 15px;
   }
+  .wrap-items li {
+    width: 100%;
+  }
   .wrap-items li a {
     font-size: 1.8rem;
+  }
+
+  .hr-items {
+    display: block;
+    height: 0;
+    border: 0;
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    border-top: 1px solid rgba(0, 0, 0, 0.16);
   }
 }
