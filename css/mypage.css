@@ -150,8 +150,8 @@ main .wrap {
 
   .register-img {
     box-sizing: border-box;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     margin: 20px auto;
   }
   .mark-register,
@@ -167,13 +167,13 @@ main .wrap {
   }
 
   .fshnst-img {
-    border-radius: 15px;
+    border-radius: 50%;
   }
 
   .mark-register {
     width: 44px;
     height: 44px;
-    border-radius: 15px;
+    border-radius: 50%;
     top: -54px;
     left: -10px;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.16);
