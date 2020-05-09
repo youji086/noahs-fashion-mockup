@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>入金履歴</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/icon_fonts.css" />
+    <link rel="stylesheet" href="./css/deposit_history.css" />
+    <link rel="stylesheet" href="./css/tabbar.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">入金履歴</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <!-- メインここから -->
+    <main>
+      <div class="wrap">
+        <ul class="tab-deposit">
+          <li class="active-tab">未入金</li>
+          <li>入金済み</li>
+        </ul>
+        <div class="deposit-history">
+          <ul class="show-list">
+            <li class="deposit">
+              <a href="#">
+                <div class="date">
+                  <p class="day">2020/10/10</p>
+                  <p class="time">10:00 ~ 11:00</p>
+                </div>
+                <p class="amount">¥ 114,000</p>
+              </a>
+            </li>
+            <li class="deposit">
+              <a href="#">
+                <div class="date">
+                  <p class="day">2020/10/10</p>
+                  <p class="time">10:00 ~ 11:00</p>
+                </div>
+                <p class="amount">¥ 114,000</p>
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li class="deposit">
+              <a href="#">
+                <div class="date">
+                  <p class="day">2020/1/1</p>
+                  <p class="time">8:00 ~ 9:00</p>
+                </div>
+                <p class="amount">¥ 4,000</p>
+              </a>
+            </li>
+            <li class="deposit">
+              <a href="#">
+                <div class="date">
+                  <p class="day">2020/1/1</p>
+                  <p class="time">9:00 ~ 11:00</p>
+                </div>
+                <p class="amount">¥ 4,000</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </main>
+    <!-- メインここまで -->
+    <script>
+      // ＊入金履歴ページのスクリプト＊
+      $('.tab-deposit li').click(function () {
+        let index = $('.tab-deposit li').index(this);
+        $('.tab-deposit li').removeClass('active-tab');
+        $(this).addClass('active-tab');
+        $('.deposit-history ul')
+          .removeClass('show-list')
+          .eq(index)
+          .addClass('show-list');
+      });
+      // ＊ここから下はタブバー関連のスクリプト＊
+      // メニューのアクティブ項目にcssを追加
+      $('#menu li a').click(function () {
+        $('#menu li a').removeClass('active-menu');
+        $(this).addClass('active-menu');
+      });
+
+      // ロゴのクリックイベント（探すページをクリックする）
+      $('#logo').click(function () {
+        $('.menu-search').parent('a').click();
+      });
+
+      // ヘッダー固定
+      (function () {
+        const target = document.getElementById('header'),
+          height = 80;
+        let offset = 0,
+          lastPosition = 0,
+          ticking = false;
+
+        function onScroll() {
+          if (lastPosition > height) {
+            if (lastPosition > offset) {
+              target.classList.add('head-animation');
+            } else {
+              target.classList.remove('head-animation');
+            }
+            offset = lastPosition;
+          }
+        }
+
+        window.addEventListener('scroll', function (e) {
+          lastPosition = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              onScroll(lastPosition);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
