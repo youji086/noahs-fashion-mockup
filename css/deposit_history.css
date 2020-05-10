@@ -56,4 +56,43 @@ main .wrap {
 }
 
 @media screen and (min-width: 769px) {
+  main {
+    background-color: #f5f5f5;
+    padding-top: 20px;
+  }
+
+  .tab-deposit {
+    border-bottom: none;
+  }
+  .tab-deposit li {
+    width: calc(50% - 40px);
+    margin: 0 20px;
+    padding: 20px 0;
+    border-bottom: 3px solid #f54ea2;
+    cursor: text;
+    font-size: 2rem;
+    color: #000000;
+    border-radius: 15px 15px 0 0;
+    background-color: #ffffff;
+  }
+  .tab-deposit li.active-tab {
+    color: #000000;
+  }
+
+  .deposit-history {
+    display: flex;
+  }
+  .deposit-history .deposit .date p {
+    font-size: 1.8rem;
+  }
+  .deposit-history .deposit .amount {
+    font-size: 3rem;
+  }
+  .deposit-history ul {
+    display: block;
+    width: 50%;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+    margin: 0 20px;
+  }
 }
