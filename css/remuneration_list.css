@@ -1,0 +1,103 @@
+@charset "UTF-8";
+
+main .wrap {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tab-remuneration {
+  display: flex;
+  border-bottom: 2px solid #f5f5f5;
+}
+.tab-remuneration li {
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: bold;
+  text-align: center;
+  color: #555555;
+  display: inline-block;
+  width: 50%;
+  padding: 10px 0 20px;
+  cursor: pointer;
+}
+
+.tab-remuneration li.active-tab {
+  color: #f54ea2;
+  border-bottom: 3px solid #f54ea2;
+}
+
+.remuneration-history p {
+  line-height: 1;
+}
+
+.remuneration-history ul {
+  display: none;
+}
+.remuneration-history ul.show-list {
+  display: block;
+}
+.remuneration-history .remuneration label {
+  box-sizing: border-box;
+  padding: 20px;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.remuneration-history .remuneration .date .time {
+  margin-top: 5px;
+}
+
+.remuneration-history .remuneration .amount {
+  font-size: 2.8rem;
+  line-height: 1;
+}
+
+.submit {
+  display: none;
+}
+
+@media screen and (min-width: 769px) {
+  main {
+    background-color: #f5f5f5;
+    padding-top: 20px;
+  }
+
+  .tab-remuneration {
+    border-bottom: none;
+  }
+  .tab-remuneration li {
+    width: calc(50% - 40px);
+    margin: 0 20px;
+    padding: 20px 0;
+    border-bottom: 3px solid #f54ea2;
+    cursor: text;
+    font-size: 2rem;
+    color: #000000;
+    border-radius: 15px 15px 0 0;
+    background-color: #ffffff;
+  }
+  .tab-remuneration li.active-tab {
+    color: #000000;
+  }
+
+  .remuneration-history {
+    display: flex;
+  }
+  .remuneration-history .remuneration .date p {
+    font-size: 1.8rem;
+  }
+  .remuneration-history .remuneration .amount {
+    font-size: 3rem;
+  }
+  .remuneration-history ul {
+    display: block;
+    width: 50%;
+    border-radius: 0 0 15px 15px;
+    background-color: #ffffff;
+    margin: 0 20px;
+  }
+}
