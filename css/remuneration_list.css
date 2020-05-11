@@ -96,8 +96,12 @@ main .wrap {
   .remuneration-history ul {
     display: block;
     width: 50%;
-    border-radius: 0 0 15px 15px;
-    background-color: #ffffff;
     margin: 0 20px;
+  }
+  .remuneration-history ul li {
+    background-color: #ffffff;
+  }
+  .remuneration-history ul li:last-of-type {
+    border-radius: 0 0 15px 15px;
   }
 }
