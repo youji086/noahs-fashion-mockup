@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>報酬詳細</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/icon_fonts.css" />
+    <link rel="stylesheet" href="./css/remuneration_detail.css" />
+    <link rel="stylesheet" href="./css/tabbar.css" />
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">報酬詳細</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <!-- メインここから -->
+    <main>
+      <div class="wrap">
+        <div class="card-remuneration-detail">
+          <p class="item">予約番号</p>
+          <p class="value">0000-0000-0000-0000-0000-0000</p>
+          <hr />
+          <p class="item">実施日時</p>
+          <p class="value">
+            2020/12/12(月)
+            <br class="newline" />
+            10:00 ~ 11:00
+          </p>
+          <hr />
+          <p class="item">実施場所</p>
+          <p class="value">渋谷</p>
+          <hr />
+          <p class="item">価格</p>
+          <p class="value">¥ 5,000 / 時間</p>
+          <hr />
+          <p class="item">所要時間</p>
+          <p class="value">1 時間</p>
+          <hr />
+          <p class="item">報酬額</p>
+          <p class="value">¥ 4,000</p>
+          <hr />
+          <p class="item">入金日</p>
+          <p class="value">2020/12/12(月)</p>
+        </div>
+      </div>
+    </main>
+    <!-- メインここまで -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+      // ＊ここから下はタブバー関連のスクリプト＊
+      // メニューのアクティブ項目にcssを追加
+      $('#menu li a').click(function () {
+        $('#menu li a').removeClass('active-menu');
+        $(this).addClass('active-menu');
+      });
+
+      // ロゴのクリックイベント（探すページをクリックする）
+      $('#logo').click(function () {
+        $('.menu-search').parent('a').click();
+      });
+
+      // ヘッダー固定
+      (function () {
+        const target = document.getElementById('header'),
+          height = 80;
+        let offset = 0,
+          lastPosition = 0,
+          ticking = false;
+
+        function onScroll() {
+          if (lastPosition > height) {
+            if (lastPosition > offset) {
+              target.classList.add('head-animation');
+            } else {
+              target.classList.remove('head-animation');
+            }
+            offset = lastPosition;
+          }
+        }
+
+        window.addEventListener('scroll', function (e) {
+          lastPosition = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              onScroll(lastPosition);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
