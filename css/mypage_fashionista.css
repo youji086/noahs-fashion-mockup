@@ -191,9 +191,6 @@ main .wrap {
   .btn-profile-edit {
     flex-direction: column;
   }
-  .btn-profile-edit li {
-    width: 100%;
-  }
   .btn-profile-edit li:first-of-type {
     margin-bottom: 20px;
   }
