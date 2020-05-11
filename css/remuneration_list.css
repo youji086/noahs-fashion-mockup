@@ -74,11 +74,12 @@ main .wrap {
     margin: 0 20px;
     padding: 20px 0;
     border-bottom: 3px solid #f54ea2;
-    cursor: text;
+    cursor: default;
     font-size: 2rem;
     color: #000000;
     border-radius: 15px 15px 0 0;
     background-color: #ffffff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
   }
   .tab-remuneration li.active-tab {
     color: #000000;
@@ -100,8 +101,12 @@ main .wrap {
   }
   .remuneration-history ul li {
     background-color: #ffffff;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
   }
   .remuneration-history ul li:last-of-type {
     border-radius: 0 0 15px 15px;
+  }
+  .remuneration-history ul li:last-of-type label {
+    border-bottom: none;
   }
 }
