@@ -54,8 +54,8 @@ main .wrap h3 {
   border-radius: 5px;
   width: 100%;
   max-width: 769px;
-  height: 300px;
-  margin: 20px auto 40px;
+  height: 200px;
+  margin: 20px 0 40px;
   padding: 10px 20px;
   box-sizing: border-box;
   font-size: 1.6rem;
