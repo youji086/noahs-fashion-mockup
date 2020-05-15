@@ -67,7 +67,6 @@
           <label>
             <div id="wrap-rating">
               <div id="star-rating-review" class="star-rating"></div>
-              <p>評価: <span id="rating-value"></span></p>
               <input type="hidden" name="ratingValue" value="" />
             </div>
             <textarea
@@ -94,9 +93,7 @@
     <script src="./js/jquery.star-rating-svg.js"></script>
     <script>
       let reviewRating = $('#star-rating-review');
-      let ratingValue = document.getElementById('rating-value');
-      // ratingValue に初期値5を設定
-      ratingValue.textContent = 5;
+      let ratingValueNum;
       // star-rating-svg の設定
       reviewRating.starRating({
         useFullStars: true,
@@ -110,7 +107,8 @@
         activeColor: 'gold',
         ratedColor: 'gold',
       });
-      reviewRating.starRating('setRating', ratingValue.textContent, true);
+      // 初期表示 評価値：5
+      reviewRating.starRating('setRating', 5, true);
       ratingValueNum = reviewRating.starRating('getRating');
       document
         .querySelector('input[name="ratingValue"]')
@@ -119,7 +117,6 @@
       // 星のクリックイベントにより、評価値を再設定
       reviewRating.on('click', () => {
         ratingValueNum = reviewRating.starRating('getRating');
-        ratingValue.textContent = Math.trunc(ratingValueNum);
         document
           .querySelector('input[name="ratingValue"]')
           .setAttribute('value', Math.trunc(ratingValueNum));
