@@ -39,31 +39,30 @@ main .wrap h3 {
   margin: 0 auto;
   line-height: 1;
 }
-.review label {
+.review {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 10px 0;
 }
-.review label textarea,
-.review label input[type='submit'] {
+.review textarea,
+.review input[type='submit'] {
   display: block;
 }
-.review label textarea {
+.review textarea {
   border: 1px solid #555555;
   border-radius: 5px;
   width: 100%;
-  max-width: 769px;
   height: 200px;
-  margin: 20px 0 40px;
+  margin: 20px 0 5px;
   padding: 10px 20px;
   box-sizing: border-box;
   font-size: 1.6rem;
 }
-.review label input[type='submit'] {
+.review input[type='submit'] {
   width: 125px;
   height: 40px;
-  margin: 0 auto;
+  margin: 40px auto 0;
   border: none;
   border-radius: 15px;
   box-sizing: border-box;
@@ -81,11 +80,67 @@ main .wrap h3 {
   justify-content: center;
 }
 
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+}
+
+#display-char-left,
+#char-left {
+  font-size: 1.6rem;
+}
+#display-char-left {
+  color: #555555;
+}
+
+#char-left {
+  display: inline-block;
+}
+
 .caution {
   display: block;
   text-align: center;
   font-size: 1.2rem;
 }
 
+.color-yellow {
+  color: orange;
+  font-weight: bold;
+}
+.color-red {
+  color: red;
+  font-weight: bold;
+}
+
 @media screen and (min-width: 769px) {
+  main .wrap h3 {
+    font-size: 2.2rem;
+  }
+
+  .fshnst-img {
+    width: 150px;
+    height: 150px;
+  }
+  .fshnst-name {
+    font-size: 2.6rem;
+  }
+
+  .review {
+    max-width: 769px;
+    margin: 10px auto;
+  }
+
+  .review input[type='submit'] {
+    width: 200px;
+    height: 60px;
+    font-size: 2.2rem;
+  }
+  .review input[type='submit']:hover {
+    cursor: pointer;
+  }
+
+  .caution {
+    font-size: 1.4rem;
+  }
 }

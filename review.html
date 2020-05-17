@@ -64,22 +64,25 @@
           <p class="fshnst-name">あいうえおかきくけこ</p>
         </div>
         <form class="review" action="#" method="post">
-          <label>
-            <div id="wrap-rating">
-              <div id="star-rating-review" class="star-rating"></div>
-              <input type="hidden" name="ratingValue" value="" />
-            </div>
-            <textarea
-              name="comment"
-              id="comment"
-              cols="30"
-              rows="10"
-              maxlength="300"
-              placeholder="自分に合う新しいコーディネートを考えてもらえて非常に満足してんます。
+          <div id="wrap-rating">
+            <div id="star-rating-review" class="star-rating"></div>
+            <input type="hidden" name="ratingValue" value="" />
+          </div>
+          <textarea
+            name="comment"
+            id="comment"
+            cols="30"
+            rows="10"
+            maxlength="300"
+            placeholder="自分に合う新しいコーディネートを考えてもらえて非常に満足してんます。
 是非もう一度お願いしたいと思っています。"
-            ></textarea>
-            <input type="submit" value="投稿" />
-          </label>
+          ></textarea>
+          <div class="flex-row">
+            <p id="display-char-left">
+              残り <span id="char-left">300</span> / 300 文字
+            </p>
+          </div>
+          <input type="submit" value="投稿" />
         </form>
         <span class="caution"
           >誹謗・中傷・不適切な書き込み、事実無根な書き込みは禁止です。</span
@@ -89,7 +92,7 @@
     <!-- メインここまで -->
     <!-- jsファイルの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- star rating svg スクリプト -->
+    <!-- review スクリプト -->
     <script src="./js/jquery.star-rating-svg.js"></script>
     <script>
       let reviewRating = $('#star-rating-review');
@@ -121,8 +124,28 @@
           .querySelector('input[name="ratingValue"]')
           .setAttribute('value', Math.trunc(ratingValueNum));
       });
+
+      // 入力可能な残りの文字数を計算 スタイルの適用
+      const maxStringLength = 300;
+      let charLeft = document.getElementById('char-left');
+      let comment = document.getElementById('comment');
+      let charLeftNum;
+      comment.addEventListener('input', () => {
+        charLeftNum = maxStringLength - comment.value.length;
+        charLeft.textContent = charLeftNum;
+        if (charLeftNum <= 10) {
+          charLeft.classList.add('color-yellow');
+          if (charLeftNum <= 0) {
+            charLeft.classList.add('color-red');
+          } else {
+            charLeft.classList.remove('color-red');
+          }
+        } else {
+          charLeft.classList.remove('color-yellow');
+        }
+      });
     </script>
-    <!-- star rating svg スクリプトここまで -->
+    <!-- review スクリプトここまで -->
     <!-- jsファイルの読み込みここまで -->
     <script>
       // メニューのアクティブ項目にcssを追加
