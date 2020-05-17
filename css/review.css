@@ -60,7 +60,7 @@ main .wrap h3 {
   font-size: 1.6rem;
 }
 .review input[type='submit'] {
-  width: 125px;
+  width: 200px;
   height: 40px;
   margin: 40px auto 0;
   border: none;
@@ -132,7 +132,7 @@ main .wrap h3 {
   }
 
   .review input[type='submit'] {
-    width: 200px;
+    width: 350px;
     height: 60px;
     font-size: 2.2rem;
   }
