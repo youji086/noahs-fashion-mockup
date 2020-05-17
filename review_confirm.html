@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>レビュー内容確認</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/icon_fonts.css" />
+    <link rel="stylesheet" href="./css/star-rating-svg.css" />
+    <link rel="stylesheet" href="./css/review_confirm.css" />
+    <link rel="stylesheet" href="./css/tabbar.css" />
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">Noah's Fashion</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <!-- メインここから -->
+    <main>
+      <div class="wrap">
+        <div class="bgc-gray">
+          <h3>レビューを確認</h3>
+          <span class="caution">
+            誹謗・中傷・不適切な書き込み、事実無根な書き込みは禁止です。確認して頂きよろしければ完了してください。一度投稿されたレビューは変更することはできません。
+          </span>
+        </div>
+        <div class="wrap-fshnst">
+          <img
+            src="./fashionista_edit/fashionist_images/woman-sample_1.jpg"
+            class="fshnst-img"
+          />
+          <p class="fshnst-name">あいうえおかきくけこ</p>
+        </div>
+        <form class="review" action="#" method="post">
+          <div id="wrap-rating">
+            <div id="star-rating-review" class="star-rating"></div>
+            <input type="hidden" name="ratingValue" value="5" />
+          </div>
+          <textarea
+            name="comment"
+            id="comment"
+            cols="30"
+            rows="10"
+            maxlength="300"
+            disabled
+          >
+ああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああああ＜290文字＞
+        </textarea
+          >
+          <div class="buttons">
+            <input type="button" value="編集する" />
+            <input type="submit" value="投稿" />
+          </div>
+        </form>
+      </div>
+    </main>
+    <!-- メインここまで -->
+    <!-- jsファイルの読み込み -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- review_confirm スクリプト -->
+    <script src="./js/jquery.star-rating-svg.js"></script>
+    <script>
+      let reviewRating = $('#star-rating-review');
+      let ratingValueNum = document.getElementsByName('ratingValue').item(0)
+        .value;
+      console.log(ratingValueNum);
+      // star-rating-svg の設定
+      reviewRating.starRating({
+        useFullStars: true,
+        readOnly: true,
+        totalStars: 5,
+        initialRating: 5,
+        starSize: 40,
+        starShape: 'rounded',
+        emptyColor: 'lightgray',
+        hoverColor: 'gold',
+        activeColor: 'gold',
+        ratedColor: 'gold',
+      });
+      reviewRating.starRating('setRating', ratingValueNum, true);
+    </script>
+    <!-- review_confirm スクリプト ここまで -->
+    <!-- jsファイルの読み込みここまで -->
+    <script>
+      // メニューのアクティブ項目にcssを追加
+      $('#menu li a').click(function () {
+        $('#menu li a').removeClass('active-menu');
+        $(this).addClass('active-menu');
+      });
+
+      // ロゴのクリックイベント（探すページをクリックする）
+      $('#logo').click(function () {
+        $('.menu-search').parent('a').click();
+      });
+
+      // ヘッダー固定
+      (function () {
+        const target = document.getElementById('header'),
+          height = 80;
+        let offset = 0,
+          lastPosition = 0,
+          ticking = false;
+
+        function onScroll() {
+          if (lastPosition > height) {
+            if (lastPosition > offset) {
+              target.classList.add('head-animation');
+            } else {
+              target.classList.remove('head-animation');
+            }
+            offset = lastPosition;
+          }
+        }
+
+        window.addEventListener('scroll', function (e) {
+          lastPosition = window.scrollY;
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              onScroll(lastPosition);
+              ticking = false;
+            });
+            ticking = true;
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>
