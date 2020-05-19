@@ -58,7 +58,9 @@
         <div class="bgc-gray">
           <h3>レビューを確認</h3>
           <span class="caution">
-            誹謗・中傷・不適切な書き込み、事実無根な書き込みは禁止です。確認して頂きよろしければ完了してください。一度投稿されたレビューは変更することはできません。
+            誹謗・中傷・不適切な書き込み、事実無根な書き込みは禁止です。<br />
+            確認して頂きよろしければ完了してください。<br />
+            一度投稿されたレビューは変更することはできません。
           </span>
         </div>
         <div class="wrap-fshnst">
@@ -68,7 +70,7 @@
           />
           <p class="fshnst-name">あいうえおかきくけこ</p>
         </div>
-        <form class="review" action="#" method="post">
+        <div class="review">
           <div id="wrap-rating">
             <div id="star-rating-review" class="star-rating"></div>
             <input type="hidden" name="ratingValue" value="5" />
@@ -85,10 +87,16 @@
         </textarea
           >
           <div class="buttons">
-            <input type="button" value="編集する" />
-            <input type="submit" value="投稿" />
+            <form id="edit" action="" method="post">
+              <input type="submit" value="編集する" />
+            </form>
+            <form id="post" action="" method="post">
+              <input type="hidden" name="ratingValue" value="" />
+              <input type="hidden" name="comment" value="" />
+              <input type="submit" value="投稿" />
+            </form>
           </div>
-        </form>
+        </div>
       </div>
     </main>
     <!-- メインここまで -->
