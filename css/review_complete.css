@@ -1,0 +1,62 @@
+@charset "UTF-8";
+main {
+  padding-top: 0;
+  margin-bottom: 80px;
+}
+
+main .bgc-gray {
+  padding-top: 20px;
+  background-color: #f5f5f5;
+}
+
+main .wrap h3 {
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+  color: #555555;
+}
+main .caution {
+  display: block;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 20px 40px;
+  box-sizing: border-box;
+  color: #555555;
+}
+
+main input[type='submit'] {
+  display: block;
+  color: #555555;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #555555;
+  border-radius: 15px;
+  box-sizing: border-box;
+  font-size: 2rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin: 40px auto 0;
+}
+
+@media screen and (min-width: 769px) {
+  main .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  main .wrap h3 {
+    font-size: 2.2rem;
+  }
+  main .caution {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+
+  main input[type='submit'] {
+    height: 60px;
+    width: 250px;
+    font-size: 2.2rem;
+  }
+  main input[type='submit']:hover {
+    cursor: pointer;
+  }
+}
