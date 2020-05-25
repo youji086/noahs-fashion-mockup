@@ -68,6 +68,7 @@
                   type="text"
                   name="last_name_kanji"
                   class="last_name_kanji"
+                  pattern="[^\x20-\x7E]*"
                   required
                 />
               </label>
@@ -77,6 +78,7 @@
                   type="text"
                   name="first_name_kanji"
                   class="first_name_kanji"
+                  pattern="[^\x20-\x7E]*"
                   required
                 />
               </label>
@@ -88,6 +90,7 @@
                   type="text"
                   name="last_name_kana"
                   class="last_name_kana"
+                  pattern="[\uFF66-\uFF9D]*"
                   required
                 />
               </label>
@@ -97,6 +100,7 @@
                   type="text"
                   name="first_name_kana"
                   class="first_name_kana"
+                  pattern="[\uFF66-\uFF9D]*"
                   required
                 />
               </label>
@@ -232,6 +236,7 @@
                   name=""
                   value=""
                   class="state_kanji"
+                  pattern="[^\x20-\x7E]*"
                   required
                 />
               </label>
@@ -244,6 +249,7 @@
                   name=""
                   value=""
                   class="state_kana"
+                  pattern="[\uFF66-\uFF9D]*"
                   required
                 />
               </label>
@@ -256,6 +262,7 @@
                   name=""
                   value=""
                   class="city_kanji"
+                  pattern="[^\x20-\x7E]*"
                   required
                 />
               </label>
@@ -268,6 +275,7 @@
                   name=""
                   value=""
                   class="city_kana"
+                  pattern="[\uFF66-\uFF9D]*"
                   required
                 />
               </label>
@@ -280,6 +288,7 @@
                   name=""
                   value=""
                   class="town_kanji"
+                  pattern="[^\x20-\x7E]*"
                   required
                 />
               </label>
@@ -292,6 +301,7 @@
                   name=""
                   value=""
                   class="town_kana"
+                  pattern="[\uFF66-\uFF9D\d-]*"
                   required
                 />
               </label>
@@ -305,6 +315,7 @@
                   value=""
                   placeholder="住所(1行目)"
                   class="line1_kanji"
+                  pattern="[^\x20-\x7E]*"
                   required
                 />
               </label>
@@ -318,6 +329,7 @@
                   value=""
                   placeholder="ｼﾞｭｳｼｮ(1行目)"
                   class="line1_kana"
+                  pattern="[\uFF66-\uFF9D\d-]*"
                   required
                 />
               </label>
@@ -330,6 +342,7 @@
                   name=""
                   value=""
                   placeholder="住所(2行目)"
+                  pattern="[^\x20-\x7E]*"
                   class="line2_kanji"
                 />
               </label>
@@ -342,6 +355,7 @@
                   name=""
                   value=""
                   placeholder="ｼﾞｭｳｼｮ(2行目)"
+                  pattern="[\uFF66-\uFF9D\d-]*"
                   class="line2_kana"
                 />
               </label>
@@ -455,83 +469,6 @@
       $('#id-file2').on('change', function () {
         $('#display-file2').text(this.value);
       });
-
-      // 半角ｶﾅ文字チェック
-      const ex1 = /[^ｦ-ﾟ]+/gi;
-      const ex2 = /[^ｦ-ﾟ\d-]+/gi;
-      const kanaErrMsg1 = '「半角ｶﾅ」で入力してください';
-      const kanaErrMsg2 =
-        '「半角ｶﾅ」「半角数字」「-(半角ハイフン)」で入力してください';
-      document.querySelector('.last_name_kana').addEventListener(
-        'change',
-        function () {
-          if (ex1.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg1);
-          }
-        },
-        false
-      );
-      document.querySelector('.first_name_kana').addEventListener(
-        'change',
-        function () {
-          if (ex1.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg1);
-          }
-        },
-        false
-      );
-      document.querySelector('.state_kana').addEventListener(
-        'change',
-        function () {
-          if (ex1.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg1);
-          }
-        },
-        false
-      );
-      document.querySelector('.city_kana').addEventListener(
-        'change',
-        function () {
-          if (ex1.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg1);
-          }
-        },
-        false
-      );
-      document.querySelector('.town_kana').addEventListener(
-        'change',
-        function () {
-          if (ex2.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg2);
-          }
-        },
-        false
-      );
-      document.querySelector('.line1_kana').addEventListener(
-        'change',
-        function () {
-          if (ex2.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg2);
-          }
-        },
-        false
-      );
-      document.querySelector('.line2_kana').addEventListener(
-        'change',
-        function () {
-          if (ex2.test(this.value)) {
-            this.value = '';
-            window.alert(kanaErrMsg2);
-          }
-        },
-        false
-      );
     </script>
 
     <script src="https://js.stripe.com/v3/"></script>
