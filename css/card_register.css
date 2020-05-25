@@ -259,6 +259,9 @@ main {
     line-height: 28px;
     width: 50%;
   }
+  #field-file input[type='file'] {
+    font-size: 1.4rem;
+  }
 
   .my-form input[type='submit'] {
     height: 60px;
