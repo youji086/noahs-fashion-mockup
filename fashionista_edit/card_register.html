@@ -83,7 +83,7 @@
             </p>
             <p>
               <label>
-                <span>セイ</span>
+                <span>ｾｲ</span>
                 <input
                   type="text"
                   name="last_name_kana"
@@ -92,7 +92,7 @@
                 />
               </label>
               <label>
-                <span>メイ</span>
+                <span>ﾒｲ</span>
                 <input
                   type="text"
                   name="first_name_kana"
@@ -238,7 +238,7 @@
             </p>
             <p>
               <label>
-                <span>都道府県(カナ)</span>
+                <span>都道府県(半角ｶﾅ)</span>
                 <input
                   type="text"
                   name=""
@@ -250,7 +250,7 @@
             </p>
             <p>
               <label>
-                <span>区市町村(漢字)</span>
+                <span>市区町村(漢字)</span>
                 <input
                   type="text"
                   name=""
@@ -262,7 +262,7 @@
             </p>
             <p>
               <label>
-                <span>区市町村(カナ)</span>
+                <span>市区町村(半角ｶﾅ)</span>
                 <input
                   type="text"
                   name=""
@@ -286,7 +286,7 @@
             </p>
             <p>
               <label>
-                <span>町名(丁目まで、カナ)</span>
+                <span>町名(丁目まで、半角ｶﾅ)</span>
                 <input
                   type="text"
                   name=""
@@ -311,7 +311,7 @@
             </p>
             <p>
               <label>
-                <span>番地、号(カナ)</span>
+                <span>番地、号(半角ｶﾅ)</span>
                 <input
                   type="text"
                   name=""
@@ -336,7 +336,7 @@
             </p>
             <p>
               <label>
-                <span>建物・部屋番号・その他(任意、カナ)</span>
+                <span>建物・部屋番号・その他(任意、半角ｶﾅ)</span>
                 <input
                   type="text"
                   name=""
@@ -350,19 +350,25 @@
 
           <fieldset id="field-file">
             <p class="subtitle">本人確認書類の提出</p>
-            <input
-              type="file"
-              id="id-file"
-              name="id-file"
-              accept=".jpeg,.jpg,.png"
-              required
-            />
-            <input
-              type="file"
-              id="id-file2"
-              name="id-file"
-              accept=".jpeg,.jpg,.png"
-            />
+            <label for="id-file">
+              <span class="btn-file">ファイルを選択(必須)</span>
+              <input
+                type="file"
+                id="id-file"
+                name="id-file"
+                accept=".jpeg,.jpg,.png"
+                required
+              />
+            </label>
+            <label for="id-file2">
+              <span class="btn-file">ファイルを選択</span>
+              <input
+                type="file"
+                id="id-file2"
+                name="id-file"
+                accept=".jpeg,.jpg,.png"
+              />
+            </label>
 
             <div class="card">
               <p>提出できる書類一覧</p>
