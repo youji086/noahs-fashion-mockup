@@ -61,6 +61,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   border: none;
+  width: 100%;
   margin-bottom: 20px;
 }
 .my-form fieldset p {
@@ -117,7 +118,7 @@ main {
   font-weight: bold;
 }
 #field-file input[type='file'] {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 #field-file #id-file {
   margin-bottom: 5px;
@@ -127,6 +128,8 @@ main {
   background-color: #ffffff;
   padding: 20px;
   margin-top: 20px;
+  width: 100%;
+  box-sizing: border-box;
   line-height: 1;
   border-radius: 15px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
