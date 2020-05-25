@@ -360,6 +360,9 @@
                 required
               />
             </label>
+            <p class="select-file">
+              選択したファイル：<span id="display-file1"></span>
+            </p>
             <label for="id-file2">
               <span class="btn-file">ファイルを選択</span>
               <input
@@ -369,6 +372,9 @@
                 accept=".jpeg,.jpg,.png"
               />
             </label>
+            <p class="select-file">
+              選択したファイル：<span id="display-file2"></span>
+            </p>
 
             <div class="card">
               <p>提出できる書類一覧</p>
@@ -441,6 +447,91 @@
           });
         });
       });
+
+      // idファイル選択時にファイル名を表示
+      $('#id-file').on('change', function () {
+        $('#display-file1').text(this.value);
+      });
+      $('#id-file2').on('change', function () {
+        $('#display-file2').text(this.value);
+      });
+
+      // 半角ｶﾅ文字チェック
+      const ex1 = /[^ｦ-ﾟ]+/gi;
+      const ex2 = /[^ｦ-ﾟ\d-]+/gi;
+      const kanaErrMsg1 = '「半角ｶﾅ」で入力してください';
+      const kanaErrMsg2 =
+        '「半角ｶﾅ」「半角数字」「-(半角ハイフン)」で入力してください';
+      document.querySelector('.last_name_kana').addEventListener(
+        'change',
+        function () {
+          if (ex1.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg1);
+          }
+        },
+        false
+      );
+      document.querySelector('.first_name_kana').addEventListener(
+        'change',
+        function () {
+          if (ex1.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg1);
+          }
+        },
+        false
+      );
+      document.querySelector('.state_kana').addEventListener(
+        'change',
+        function () {
+          if (ex1.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg1);
+          }
+        },
+        false
+      );
+      document.querySelector('.city_kana').addEventListener(
+        'change',
+        function () {
+          if (ex1.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg1);
+          }
+        },
+        false
+      );
+      document.querySelector('.town_kana').addEventListener(
+        'change',
+        function () {
+          if (ex2.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg2);
+          }
+        },
+        false
+      );
+      document.querySelector('.line1_kana').addEventListener(
+        'change',
+        function () {
+          if (ex2.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg2);
+          }
+        },
+        false
+      );
+      document.querySelector('.line2_kana').addEventListener(
+        'change',
+        function () {
+          if (ex2.test(this.value)) {
+            this.value = '';
+            window.alert(kanaErrMsg2);
+          }
+        },
+        false
+      );
     </script>
 
     <script src="https://js.stripe.com/v3/"></script>

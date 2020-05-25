@@ -117,7 +117,7 @@ main {
 #field-file p {
   font-weight: bold;
 }
-.btn-file {
+#field-file .btn-file {
   display: block;
   font-size: 1.2rem;
   font-weight: bold;
@@ -130,23 +130,17 @@ main {
   text-align: center;
   cursor: pointer;
   background-color: #ffffff;
+  margin-bottom: 5px;
 }
 #field-file input[type='file'] {
-  font-size: 1rem;
-  position: relative;
-  margin-top: 5px;
+  display: none;
 }
-#field-file input[type='file']::before {
-  content: '添付ファイル：';
-  position: absolute;
-  text-align: right;
-  background: #f5f5f5;
-  height: 18px;
-  line-height: 18px;
-  width: 90px;
-}
-#field-file #id-file {
-  margin-bottom: 5px;
+#field-file .select-file {
+  font-size: 1.2rem;
+  font-weight: normal;
+  padding: 0 20px;
+  line-height: 1;
+  margin-bottom: 10px;
 }
 #field-file .card {
   display: block;
@@ -275,6 +269,19 @@ main {
     color: #f54ea2;
   }
 
+  #field-file .btn-file {
+    height: 30px;
+    width: 200px;
+    font-size: 1.4rem;
+    line-height: 30px;
+    transition: all 0.2s ease;
+  }
+  #field-file .btn-file:hover {
+    color: #f54ea2;
+  }
+  #field-file .select-file {
+    font-size: 1.4rem;
+  }
   #field-file .card {
     max-width: 769px;
     margin: 20px auto 0;
@@ -283,9 +290,6 @@ main {
     font-size: 1.8rem;
     line-height: 28px;
     width: 50%;
-  }
-  #field-file input[type='file'] {
-    font-size: 1.4rem;
   }
 
   .my-form input[type='submit'] {
