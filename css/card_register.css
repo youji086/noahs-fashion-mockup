@@ -48,12 +48,6 @@ main {
   line-height: 22px;
 }
 
-main fieldset {
-  display: flex;
-  border: none;
-  margin-bottom: 20px;
-}
-
 .my-form {
   display: flex;
   flex-wrap: wrap;
@@ -62,6 +56,11 @@ main fieldset {
   padding: 20px;
   background-color: #f5f5f5;
   margin-top: 20px;
+}
+.my-form fieldset {
+  display: flex;
+  border: none;
+  margin-bottom: 20px;
 }
 .my-form fieldset p {
   display: flex;
@@ -85,7 +84,6 @@ main fieldset {
 }
 #field-name input[type='text'] {
   width: 60%;
-  height: 20px;
 }
 
 #field-gender,
@@ -102,6 +100,9 @@ main fieldset {
   display: inline-block;
   width: 100%;
 }
+#field-address input[type='text'].postal_code {
+  width: 100px;
+}
 #field-address input[type='text']:not(.postal_code) {
   width: 100%;
   max-width: 250px;
@@ -114,7 +115,14 @@ main fieldset {
 #field-file p {
   font-weight: bold;
 }
+#field-file input[type='file'] {
+  font-size: 1.4rem;
+}
+#field-file #id-file {
+  margin-bottom: 5px;
+}
 #field-file .card {
+  display: block;
   background-color: #ffffff;
   padding: 20px;
   margin-top: 20px;
@@ -140,6 +148,9 @@ main fieldset {
 #field-file .card img {
   width: 100%;
 }
+#field-file .caution {
+  padding: 0 20px;
+}
 
 .my-form input[type='submit'] {
   width: 100%;
@@ -158,4 +169,108 @@ main fieldset {
 }
 
 @media screen and (min-width: 769px) {
+  main .wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .caution {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+  .my-form {
+    padding: 40px;
+    border-radius: 15px;
+    margin-bottom: 40px;
+  }
+  .my-form p {
+    font-size: 1.8rem;
+    line-height: 28px;
+  }
+  .my-form .subtitle {
+    width: 100%;
+    max-width: 769px;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+  }
+  .my-form fieldset {
+    width: 100%;
+    max-width: 769px;
+    margin: 0 auto 20px;
+  }
+  .my-form input[type='text'] {
+    font-size: 1.8rem;
+    height: 23px;
+  }
+  .my-form select {
+    height: 23px;
+    font-size: 1.4rem;
+  }
+
+  #field-name p {
+    width: 61.8%;
+  }
+  #field-name span {
+    width: 50px;
+  }
+
+  #field-address p {
+    margin-bottom: 10px;
+  }
+  #field-address label {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+  }
+  #field-address p:first-of-type label {
+    width: auto;
+  }
+  #field-address label span {
+    display: inline-block;
+    width: auto;
+  }
+  #field-address input[type='text'] {
+    margin-left: 40px;
+  }
+  #field-address input[type='text']:not(.postal_code) {
+    width: 300px;
+  }
+  #btn-autofill {
+    height: 30px;
+    width: 100px;
+    margin-left: 20px;
+    font-size: 1.4rem;
+    transition: all 0.2s ease;
+  }
+  #btn-autofill:hover {
+    color: #f54ea2;
+  }
+
+  #field-file .card {
+    max-width: 769px;
+    margin: 20px auto 0;
+  }
+  #field-file ul li {
+    font-size: 1.8rem;
+    line-height: 28px;
+    width: 50%;
+  }
+
+  .my-form input[type='submit'] {
+    height: 60px;
+    width: 350px;
+    margin: 0 auto;
+    transition: all 0.2s ease;
+  }
+  .my-form input[type='submit']:hover {
+    cursor: pointer;
+    color: #f54ea2;
+    border-color: #f54ea2;
+  }
+
+  #agree-to-terms {
+    font-size: 1.4rem;
+    width: 100%;
+    padding-bottom: 20px;
+  }
 }
