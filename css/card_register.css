@@ -1,4 +1,7 @@
 @charset "UTF-8";
+main {
+  padding-top: 20px;
+}
 .my-form p {
   line-height: 26px;
 }
@@ -58,6 +61,7 @@ main fieldset {
   box-sizing: border-box;
   padding: 20px;
   background-color: #f5f5f5;
+  margin-top: 20px;
 }
 .my-form fieldset p {
   display: flex;
