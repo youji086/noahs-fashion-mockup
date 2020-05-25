@@ -59,6 +59,7 @@ main {
 }
 .my-form fieldset {
   display: flex;
+  flex-wrap: wrap;
   border: none;
   margin-bottom: 20px;
 }
