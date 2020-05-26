@@ -20,6 +20,10 @@ main {
   line-height: 1;
   margin-bottom: 20px;
 }
+.my-form .danger {
+  color: #e7312d;
+  font-weight: bold;
+}
 .my-form input[type='text'] {
   border: 1px solid #555555;
   border-radius: 5px;

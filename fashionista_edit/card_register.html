@@ -54,8 +54,7 @@
     <main>
       <div class="wrap">
         <span class="caution"
-          >登録された個人情報は決済代行会社の stripe
-          へ情報提供されます。また、一度登録された情報は変更することはできません。</span
+          >登録された個人情報は決済代行会社の stripe へ情報提供されます。</span
         >
         <form class="my-form" action="create-person.php" method="post">
           <input type="hidden" name="token-account" id="token-account" />
@@ -413,7 +412,10 @@
           <input type="submit" value="次へ" />
 
           <p class="caution" id="agree-to-terms">
-            アカウントを登録すると、
+            <span class="danger"
+              >一度登録された情報は変更することはできません。</span
+            ><br />
+            また、アカウントを登録すると、
             <a
               href="https://noahs.tokyo/ja/fashion/service_term.php"
               target="_blank"
