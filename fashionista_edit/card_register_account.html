@@ -313,13 +313,13 @@
             </p>
             <p>
               <label>
-                <span>番地・号(半角数字および半角ハイフン)</span>
+                <span>番地・号(半角数字)</span>
                 <input
                   type="text"
                   name=""
                   value=""
                   class="line1_kanji"
-                  pattern="[^\x20-\x7E]*"
+                  pattern="[\d-]*"
                   placeholder="38-1"
                   required
                 />
@@ -333,7 +333,7 @@
                   name=""
                   value=""
                   class="line1_kana"
-                  pattern="[\uFF66-\uFF9D\d-]*"
+                  pattern="[\d-]*"
                   placeholder="38-1"
                   required
                 />
