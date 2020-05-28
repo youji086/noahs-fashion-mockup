@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>口座情報登録</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/icon_fonts.css" />
+    <link rel="stylesheet" href="../css/tabbar.css" />
+    <link rel="stylesheet" href="../css/card_register_account.css" />
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">口座情報登録</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <main>
+      <div class="wrap">
+        <form class="my-form" action="create-person.php" method="post">
+          <input type="hidden" name="token-account" id="token-account" />
+          <p class="subtitle">本人情報の登録</p>
+          <fieldset id="field-name">
+            <p>
+              <label>
+                <span>姓</span>
+                <input
+                  type="text"
+                  name="last_name_kanji"
+                  class="last_name_kanji"
+                  pattern="[^\x20-\x7E]*"
+                  required
+                />
+              </label>
+              <label>
+                <span>名</span>
+                <input
+                  type="text"
+                  name="first_name_kanji"
+                  class="first_name_kanji"
+                  pattern="[^\x20-\x7E]*"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>ｾｲ</span>
+                <input
+                  type="text"
+                  name="last_name_kana"
+                  class="last_name_kana"
+                  pattern="[\uFF66-\uFF9D]*"
+                  required
+                />
+              </label>
+              <label>
+                <span>ﾒｲ</span>
+                <input
+                  type="text"
+                  name="first_name_kana"
+                  class="first_name_kana"
+                  pattern="[\uFF66-\uFF9D]*"
+                  required
+                />
+              </label>
+            </p>
+            <span class="caution"
+              >※ 読み仮名は「半角ｶﾅ」で入力してください</span
+            >
+          </fieldset>
+
+          <fieldset id="field-gender">
+            <p>
+              <span>性別</span>
+              <select class="gender" name="gender" required>
+                <option selected></option>
+                <option value="female">女性</option>
+                <option value="male">男性</option>
+              </select>
+            </p>
+          </fieldset>
+
+          <fieldset id="field-birth">
+            <p>
+              <span>生年月日</span>
+              <label for="user_year">
+                <select name="user_year" class="year" required>
+                  <option selected></option>
+                  <option value="1970">1970</option>
+                  <option value="1971">1971</option>
+                  <option value="1972">1972</option>
+                  <option value="1973">1973</option>
+                  <option value="1974">1974</option>
+                  <option value="1975">1975</option>
+                  <option value="1976">1976</option>
+                  <option value="1977">1977</option>
+                  <option value="1978">1978</option>
+                  <option value="1979">1979</option>
+                  <option value="1980">1980</option>
+                  <option value="1981">1981</option>
+                  <option value="1982">1982</option>
+                  <option value="1983">1983</option>
+                  <option value="1984">1984</option>
+                  <option value="1985">1985</option>
+                  <option value="1986">1986</option>
+                  <option value="1987">1987</option>
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option> </select
+                >年</label
+              >
+              <label for="user_month">
+                <select name="user_month" class="month" required>
+                  <option selected></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option> </select
+                >月</label
+              >
+              <label for="user_day">
+                <select name="user_day" class="day" required>
+                  <option selected></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option> </select
+                >日</label
+              >
+            </p>
+          </fieldset>
+
+          <fieldset id="field-address">
+            <p>
+              <label>
+                <span>郵便番号(半角数字)</span>
+                <input
+                  type="text"
+                  class="postal_code"
+                  maxlength="7"
+                  placeholder="1600022"
+                  pattern="\d{7}"
+                  required
+                />
+              </label>
+              <input type="button" value="自動入力" id="btn-autofill" />
+            </p>
+            <p>
+              <label>
+                <span>都道府県(漢字)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="state_kanji"
+                  pattern="[^\x20-\x7E]*"
+                  placeholder="東京都"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>都道府県(半角ｶﾅ)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="state_kana"
+                  pattern="[\uFF66-\uFF9D]*"
+                  placeholder="ﾄｳｷｮｳﾄ"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>市区町村(漢字)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="city_kanji"
+                  pattern="[^\x20-\x7E]*"
+                  placeholder="新宿区"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>市区町村(半角ｶﾅ)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="city_kana"
+                  pattern="[\uFF66-\uFF9D]*"
+                  placeholder="ｼﾝｼﾞｭｸｸ"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>町名(丁目まで、漢字)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="town_kanji"
+                  pattern="[^\x20-\x7E]*"
+                  placeholder="新宿三丁目"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>町名(丁目まで、半角ｶﾅ)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="town_kana"
+                  pattern="[\uFF66-\uFF9D\d-]*"
+                  placeholder="ｼﾝｼﾞｭｸｻﾝﾁｮｳﾒ"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>番地・号(半角数字および半角ハイフン)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="line1_kanji"
+                  pattern="[^\x20-\x7E]*"
+                  placeholder="38-1"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>番地・号(半角ｶﾅ)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  class="line1_kana"
+                  pattern="[\uFF66-\uFF9D\d-]*"
+                  placeholder="38-1"
+                  required
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>建物・部屋番号・その他(任意、漢字)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  pattern="[^\x20-\x7E]*"
+                  class="line2_kanji"
+                />
+              </label>
+            </p>
+            <p>
+              <label>
+                <span>建物・部屋番号・その他(任意、半角ｶﾅ)</span>
+                <input
+                  type="text"
+                  name=""
+                  value=""
+                  pattern="[\uFF66-\uFF9D\d-]*"
+                  class="line2_kana"
+                />
+              </label>
+            </p>
+          </fieldset>
+
+          <fieldset id="field-file">
+            <p class="subtitle">本人確認書類の提出</p>
+            <label for="id-file">
+              <span class="btn-file">ファイルを選択 (表面)</span>
+              <input
+                type="file"
+                id="id-file"
+                name="id-file"
+                accept=".jpeg,.jpg,.png"
+                required
+              />
+            </label>
+            <p class="select-file">
+              選択したファイル：<span id="display-file1"></span>
+            </p>
+            <label for="id-file2">
+              <span class="btn-file">ファイルを選択 (裏面)</span>
+              <input
+                type="file"
+                id="id-file2"
+                name="id-file"
+                accept=".jpeg,.jpg,.png"
+              />
+            </label>
+            <p class="select-file">
+              選択したファイル：<span id="display-file2"></span>
+            </p>
+
+            <div class="card">
+              <p>提出できる書類一覧</p>
+              <ul>
+                <li>
+                  運転免許証
+                  <span class="caution">※ 運転免許証のみ裏面の提出も必要</span>
+                </li>
+                <li>パスポート</li>
+                <li>個人番号カード</li>
+                <li>住民票の写し</li>
+                <li>特別永住者証明書</li>
+                <li>在留カード</li>
+              </ul>
+              <img
+                src="../images/caution_id_file.jpg"
+                alt="本人確認書類の注意点"
+              />
+            </div>
+          </fieldset>
+
+          <input type="submit" value="次へ" />
+
+          <p class="caution" id="agree-to-terms">
+            入力された本人情報をもとに stripe のアカウントを登録いたします。
+            <span class="danger"
+              >一度登録された情報は変更することはできません。ご注意ください。</span
+            ><br />
+            また、アカウントを登録すると、
+            <a
+              href="https://noahs.tokyo/ja/fashion/service_term.php"
+              target="_blank"
+              >利用規約</a
+            >
+            と
+            <a
+              href="https://stripe.com/jp/connect-account/legal"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Stripe Connectedアカウント契約</a
+            >
+            に同意したことになります。
+          </p>
+        </form>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+
+    <script>
+      // 住所自動入力
+      $(function () {
+        $('#btn-autofill').click(function () {
+          const param = { zipcode: $('.postal_code').val() };
+          const url = 'https://zipcloud.ibsnet.co.jp/api/search';
+          $.ajax({
+            type: 'GET',
+            cache: false,
+            data: param,
+            url: url,
+            dataType: 'JSONP',
+            success: function (res) {
+              if (res.status == 200) {
+                // 住所情報の取得に成功した場合の処理
+                const addressData = res.results[0];
+                $('.state_kanji').val(addressData.address1);
+                $('.state_kana').val(addressData.kana1);
+                $('.city_kanji').val(addressData.address2);
+                $('.city_kana').val(addressData.kana2);
+              } else {
+                // 取得に失敗した場合、エラーメッセージをログに表示
+                console.log(`[${res.status}]${res.message}`);
+              }
+            },
+          });
+        });
+      });
+
+      // idファイル選択時にファイル名を表示
+      $('#id-file').on('change', function () {
+        $('#display-file1').text(this.value);
+      });
+      $('#id-file2').on('change', function () {
+        $('#display-file2').text(this.value);
+      });
+    </script>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script type="text/javascript">
+      // Assumes you've already included Stripe.js!
+      const stripe = Stripe('pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8');
+      const myForm = document.querySelector('.my-form');
+      myForm.addEventListener('submit', handleForm);
+
+      async function handleForm(event) {
+        event.preventDefault();
+
+        const data = new FormData();
+        data.append('file', document.querySelector('#id-file').files[0]);
+        data.append('purpose', 'identity_document');
+        const fileResult = await fetch('https://uploads.stripe.com/v1/files', {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8',
+          },
+          body: data,
+        });
+        const fileData = await fileResult.json();
+
+        data.append('file', document.querySelector('#id-file2').files[0]);
+        data.append('purpose', 'identity_document');
+        const fileResult2 = await fetch('https://uploads.stripe.com/v1/files', {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8',
+          },
+          body: data,
+        });
+        const fileData2 = await fileResult2.json();
+
+        const accountResult = await stripe.createToken('account', {
+          business_type: 'individual',
+          individual: {
+            last_name_kanji: document.querySelector('.last_name_kanji').value,
+            last_name_kana: document.querySelector('.last_name_kana').value,
+            first_name_kanji: document.querySelector('.first_name_kanji').value,
+            first_name_kana: document.querySelector('.first_name_kana').value,
+            gender: document.querySelector('.gender').value,
+            dob: {
+              day: document.querySelector('.day').value,
+              month: document.querySelector('.month').value,
+              year: document.querySelector('.year').value,
+            },
+            address_kanji: {
+              city: document.querySelector('.city_kanji').value,
+              country: 'JP',
+              line1: document.querySelector('.line1_kanji').value,
+              line2: document.querySelector('.line2_kanji').value,
+              postal_code: document.querySelector('.postal_code').value,
+              state: document.querySelector('.state_kanji').value,
+              town: document.querySelector('.town_kanji').value,
+            },
+            address_kana: {
+              state: document.querySelector('.state_kana').value,
+              city: document.querySelector('.city_kana').value,
+              town: document.querySelector('.town_kana').value,
+              line1: document.querySelector('.line1_kana').value,
+              line2: document.querySelector('.line2_kana').value,
+            },
+            verification: {
+              document: {
+                front: fileData.id,
+                back: fileData2.id,
+              },
+            },
+          },
+
+          tos_shown_and_accepted: true,
+        });
+
+        if (accountResult.token) {
+          document.querySelector('#token-account').value =
+            accountResult.token.id;
+          myForm.submit();
+        }
+      }
+    </script>
+  </body>
+</html>
