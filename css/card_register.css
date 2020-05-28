@@ -91,6 +91,11 @@ main {
 #field-name input[type='text'] {
   width: 60%;
 }
+#field-name .caution {
+  width: auto;
+  text-align: left;
+  padding: 0;
+}
 
 #field-gender,
 #field-birth {

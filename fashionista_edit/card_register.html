@@ -104,6 +104,9 @@
                 />
               </label>
             </p>
+            <span class="caution"
+              >※ 読み仮名は「半角ｶﾅ」で入力してください</span
+            >
           </fieldset>
 
           <fieldset id="field-gender">
@@ -215,13 +218,13 @@
           <fieldset id="field-address">
             <p>
               <label>
-                <span>郵便番号</span>
+                <span>郵便番号(半角数字)</span>
                 <input
                   type="text"
                   class="postal_code"
                   maxlength="7"
                   placeholder="1234567"
-                  oninput="value = value.replace(/[^0-9]+/i,'');"
+                  pattern="\d{7}"
                   required
                 />
               </label>
@@ -364,7 +367,7 @@
           <fieldset id="field-file">
             <p class="subtitle">本人確認書類の提出</p>
             <label for="id-file">
-              <span class="btn-file">ファイルを選択(必須)</span>
+              <span class="btn-file">ファイルを選択 (表面)</span>
               <input
                 type="file"
                 id="id-file"
@@ -377,7 +380,7 @@
               選択したファイル：<span id="display-file1"></span>
             </p>
             <label for="id-file2">
-              <span class="btn-file">ファイルを選択</span>
+              <span class="btn-file">ファイルを選択 (裏面)</span>
               <input
                 type="file"
                 id="id-file2"
