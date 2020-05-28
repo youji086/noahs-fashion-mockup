@@ -1,0 +1,152 @@
+@charset "UTF-8";
+main {
+  background-color: #f5f5f5;
+  padding-top: 20px;
+}
+main .wrap {
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+main .title {
+  font-size: 2rem;
+  line-height: 1;
+  text-align: center;
+}
+main a {
+  color: #f54ea2;
+}
+main a:visited {
+  color: #f54ea2;
+}
+main a:hover {
+  color: #bb3076;
+}
+main .caution {
+  display: block;
+  font-size: 1.2rem;
+  color: #555555;
+  line-height: 22px;
+}
+main #agree-to-terms {
+  padding: 20px 20px 80px;
+}
+main .danger {
+  color: #e7312d;
+  text-decoration: underline;
+}
+
+.card-account-info {
+  width: 100%;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+  background-color: #ffffff;
+  margin: 20px 0;
+  box-sizing: border-box;
+}
+.card-account-info span {
+  font-size: 1.2rem;
+  color: #555555;
+  line-height: 1;
+}
+.card-account-info p {
+  line-height: 1;
+}
+.card-account-info hr {
+  display: block;
+  height: 0;
+  border: 0;
+  width: calc(100% - 40px);
+  margin: 0 auto;
+  border-top: 1px solid rgba(0, 0, 0, 0.16);
+}
+.card-account-info div[class^='item'] {
+  padding: 20px;
+}
+.card-account-info div[class^='item'] p {
+  margin-top: 10px;
+  padding: 0 10px;
+}
+
+main .buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+main .buttons form {
+  width: calc(50% - 10px);
+}
+main .buttons input {
+  height: 40px;
+  width: 100%;
+  border: 2px solid #555555;
+  border-radius: 15px;
+  background-color: #ffffff;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #555555;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.16);
+}
+
+@media screen and (min-width: 769px) {
+  main .wrap {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  main .title {
+    font-size: 2.2rem;
+  }
+  main .caution {
+    text-align: center;
+    font-size: 1.4rem;
+  }
+
+  .card-account-info {
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 0 40px;
+  }
+  .card-account-info span {
+    font-size: 1.4rem;
+  }
+  .card-account-info p {
+    font-size: 1.8rem;
+  }
+  .card-account-info div[class^='item'] {
+    width: 30%;
+    box-sizing: border-box;
+    flex-grow: 1;
+  }
+  .card-account-info hr {
+    display: none;
+  }
+  .card-account-info hr:nth-of-type(3),
+  .card-account-info hr:nth-of-type(4),
+  .card-account-info hr:nth-of-type(6) {
+    display: block;
+  }
+  .card-account-info div[class^='item-address'] {
+    width: 25%;
+    flex-grow: unset;
+  }
+  .card-account-info div.item-address-line2 {
+    width: 50%;
+  }
+
+  main .buttons {
+    padding: 0 20px;
+  }
+  main .buttons input {
+    font-size: 2.2rem;
+    height: 60px;
+    transition: all 0.2s ease;
+  }
+  main .buttons input:hover {
+    cursor: pointer;
+    color: #f54ea2;
+    border-color: #f54ea2;
+  }
+}

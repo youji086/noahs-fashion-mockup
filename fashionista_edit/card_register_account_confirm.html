@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>口座情報登録</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/icon_fonts.css" />
+    <link rel="stylesheet" href="../css/tabbar.css" />
+    <link rel="stylesheet" href="../css/card_register_account_confirm.css" />
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">口座情報登録</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <main>
+      <div class="wrap">
+        <h2 class="title">本人情報の確認</h2>
+        <div class="card-account-info">
+          <div class="item">
+            <span>氏名</span>
+            <p>田中太郎</p>
+            <p>ﾀﾅｶﾀﾛｳ</p>
+          </div>
+          <input
+            type="hidden"
+            name="last_name_kanji"
+            class="last_name_kanji"
+            value="田中"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="first_name_kanji"
+            class="first_name_kanji"
+            value="太郎"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="last_name_kana"
+            class="last_name_kana"
+            value="ﾀﾅｶ"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="first_name_kana"
+            class="first_name_kana"
+            value="ﾀﾛｳ"
+            form="create-account"
+          />
+          <hr />
+          <div class="item">
+            <span>性別</span>
+            <p>男性</p>
+            <!-- male から 男性 への変換が必要 -->
+          </div>
+          <input
+            type="hidden"
+            name="gender"
+            class="gender"
+            value="male"
+            form="create-account"
+          />
+          <hr />
+          <div class="item">
+            <span>生年月日</span>
+            <p>1995年 5月 5日</p>
+          </div>
+          <input
+            type="hidden"
+            name="user_year"
+            class="year"
+            value="1995"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="user_month"
+            class="month"
+            value="5"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="user_day"
+            class="day"
+            value="5"
+            form="create-account"
+          />
+          <hr />
+          <div class="item-address-postal_code">
+            <span>郵便番号</span>
+            <p>160-0022</p>
+            <!-- 変換あり -->
+          </div>
+          <input
+            type="hidden"
+            name="postal_code"
+            class="postal_code"
+            value="1600022"
+            form="create-account"
+          />
+          <hr />
+          <div class="item-address-state">
+            <span>都道府県</span>
+            <p>東京都</p>
+            <p>ﾄｳｷｮｳﾄ</p>
+          </div>
+          <input
+            type="hidden"
+            name="state_kanji"
+            class="state_kanji"
+            value="東京都"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="state_kana"
+            class="state_kana"
+            value="ﾄｳｷｮｳﾄ"
+            form="create-account"
+          />
+          <hr />
+          <div class="item-address-city">
+            <span>市区町村</span>
+            <p>新宿区</p>
+            <p>ｼﾝｼﾞｭｸｸ</p>
+          </div>
+          <input
+            type="hidden"
+            name="city_kanji"
+            class="city_kanji"
+            value="新宿区"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="city_kana"
+            class="city_kana"
+            value="ｼﾝｼﾞｭｸｸ"
+            form="create-account"
+          />
+          <hr />
+          <div class="item-address-town">
+            <span>町名(丁目まで)</span>
+            <p>新宿三丁目</p>
+            <p>ｼﾝｼﾞｭｸｻﾝﾁｮｳﾒ</p>
+          </div>
+          <input
+            type="hidden"
+            name="town_kanji"
+            class="town_kanji"
+            value="新宿三丁目"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="town_kana"
+            class="town_kana"
+            value="ｼﾝｼﾞｭｸｻﾝﾁｮｳﾒ"
+            form="create-account"
+          />
+          <hr />
+          <div class="item-address-line1">
+            <span>番地・号</span>
+            <p>38-1</p>
+            <p>38-1</p>
+          </div>
+          <input
+            type="hidden"
+            name="line1_kanji"
+            class="line1_kanji"
+            value="38-1"
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="line1_kana"
+            class="line1_kana"
+            value="38-1"
+            form="create-account"
+          />
+          <hr />
+          <div class="item-address-line2">
+            <span>建物・部屋番号・その他(任意)</span>
+            <p></p>
+            <p></p>
+          </div>
+          <input
+            type="hidden"
+            name="line2_kanji"
+            class="line2_kanji"
+            value=""
+            form="create-account"
+          />
+          <input
+            type="hidden"
+            name="line2_kana"
+            class="line2_kana"
+            value=""
+            form="create-account"
+          />
+        </div>
+        <!-- カードここまで -->
+        <!-- 本人確認書類ファイル 非表示-->
+        <input
+          type="file"
+          id="id-file"
+          name="id-file"
+          accept=".jpeg,.jpg,.png"
+          value=""
+          form="create-account"
+          style="display: none;"
+        />
+        <input
+          type="file"
+          id="id-file2"
+          name="id-file"
+          accept=".jpeg,.jpg,.png"
+          value=""
+          form="create-account"
+          style="display: none;"
+        />
+        <!-- 本人確認書類ファイル ここまで -->
+        <div class="buttons">
+          <form id="edit" action="" method="post">
+            <input type="submit" value="戻る" />
+          </form>
+          <form id="create-account" class="my-form" action="" method="post">
+            <input type="hidden" name="token-account" id="token-account" />
+            <input type="submit" value="次へ" />
+          </form>
+        </div>
+
+        <p class="caution" id="agree-to-terms">
+          入力された本人情報をもとに stripe のアカウントを登録いたします。
+          <span class="danger"
+            >一度登録された情報は変更することはできません。ご注意ください。</span
+          ><br />
+          また、アカウントを登録すると、
+          <a
+            href="https://noahs.tokyo/ja/fashion/service_term.php"
+            target="_blank"
+            >利用規約</a
+          >
+          と
+          <a
+            href="https://stripe.com/jp/connect-account/legal"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Stripe Connectedアカウント契約</a
+          >
+          に同意したことになります。
+        </p>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+
+    <script>
+      // 住所自動入力
+      $(function () {
+        $('#btn-autofill').click(function () {
+          const param = { zipcode: $('.postal_code').val() };
+          const url = 'https://zipcloud.ibsnet.co.jp/api/search';
+          $.ajax({
+            type: 'GET',
+            cache: false,
+            data: param,
+            url: url,
+            dataType: 'JSONP',
+            success: function (res) {
+              if (res.status == 200) {
+                // 住所情報の取得に成功した場合の処理
+                const addressData = res.results[0];
+                $('.state_kanji').val(addressData.address1);
+                $('.state_kana').val(addressData.kana1);
+                $('.city_kanji').val(addressData.address2);
+                $('.city_kana').val(addressData.kana2);
+              } else {
+                // 取得に失敗した場合、エラーメッセージをログに表示
+                console.log(`[${res.status}]${res.message}`);
+              }
+            },
+          });
+        });
+      });
+
+      // idファイル選択時にファイル名を表示
+      $('#id-file').on('change', function () {
+        $('#display-file1').text(this.value);
+      });
+      $('#id-file2').on('change', function () {
+        $('#display-file2').text(this.value);
+      });
+    </script>
+
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script type="text/javascript">
+      // Assumes you've already included Stripe.js!
+      const stripe = Stripe('pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8');
+      const myForm = document.querySelector('.my-form');
+      myForm.addEventListener('submit', handleForm);
+
+      async function handleForm(event) {
+        event.preventDefault();
+
+        const data = new FormData();
+        data.append('file', document.querySelector('#id-file').files[0]);
+        data.append('purpose', 'identity_document');
+        const fileResult = await fetch('https://uploads.stripe.com/v1/files', {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8',
+          },
+          body: data,
+        });
+        const fileData = await fileResult.json();
+
+        data.append('file', document.querySelector('#id-file2').files[0]);
+        data.append('purpose', 'identity_document');
+        const fileResult2 = await fetch('https://uploads.stripe.com/v1/files', {
+          method: 'POST',
+          headers: {
+            Authorization: 'Bearer pk_test_klH2QmgcOrY7hMUdZ1TLwVTQ007pS3rEV8',
+          },
+          body: data,
+        });
+        const fileData2 = await fileResult2.json();
+
+        const accountResult = await stripe.createToken('account', {
+          business_type: 'individual',
+          individual: {
+            last_name_kanji: document.querySelector('.last_name_kanji').value,
+            last_name_kana: document.querySelector('.last_name_kana').value,
+            first_name_kanji: document.querySelector('.first_name_kanji').value,
+            first_name_kana: document.querySelector('.first_name_kana').value,
+            gender: document.querySelector('.gender').value,
+            dob: {
+              day: document.querySelector('.day').value,
+              month: document.querySelector('.month').value,
+              year: document.querySelector('.year').value,
+            },
+            address_kanji: {
+              city: document.querySelector('.city_kanji').value,
+              country: 'JP',
+              line1: document.querySelector('.line1_kanji').value,
+              line2: document.querySelector('.line2_kanji').value,
+              postal_code: document.querySelector('.postal_code').value,
+              state: document.querySelector('.state_kanji').value,
+              town: document.querySelector('.town_kanji').value,
+            },
+            address_kana: {
+              state: document.querySelector('.state_kana').value,
+              city: document.querySelector('.city_kana').value,
+              town: document.querySelector('.town_kana').value,
+              line1: document.querySelector('.line1_kana').value,
+              line2: document.querySelector('.line2_kana').value,
+            },
+            verification: {
+              document: {
+                front: fileData.id,
+                back: fileData2.id,
+              },
+            },
+          },
+
+          tos_shown_and_accepted: true,
+        });
+
+        if (accountResult.token) {
+          document.querySelector('#token-account').value =
+            accountResult.token.id;
+          myForm.submit();
+        }
+      }
+    </script>
+  </body>
+</html>
