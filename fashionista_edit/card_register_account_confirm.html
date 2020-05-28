@@ -296,45 +296,7 @@
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
 
-    <script>
-      // 住所自動入力
-      $(function () {
-        $('#btn-autofill').click(function () {
-          const param = { zipcode: $('.postal_code').val() };
-          const url = 'https://zipcloud.ibsnet.co.jp/api/search';
-          $.ajax({
-            type: 'GET',
-            cache: false,
-            data: param,
-            url: url,
-            dataType: 'JSONP',
-            success: function (res) {
-              if (res.status == 200) {
-                // 住所情報の取得に成功した場合の処理
-                const addressData = res.results[0];
-                $('.state_kanji').val(addressData.address1);
-                $('.state_kana').val(addressData.kana1);
-                $('.city_kanji').val(addressData.address2);
-                $('.city_kana').val(addressData.kana2);
-              } else {
-                // 取得に失敗した場合、エラーメッセージをログに表示
-                console.log(`[${res.status}]${res.message}`);
-              }
-            },
-          });
-        });
-      });
-
-      // idファイル選択時にファイル名を表示
-      $('#id-file').on('change', function () {
-        $('#display-file1').text(this.value);
-      });
-      $('#id-file2').on('change', function () {
-        $('#display-file2').text(this.value);
-      });
-    </script>
-
-    <script src="https://js.stripe.com/v3/"></script>
+    <!-- <script src="https://js.stripe.com/v3/"></script>
 
     <script type="text/javascript">
       // Assumes you've already included Stripe.js!
@@ -414,6 +376,6 @@
           myForm.submit();
         }
       }
-    </script>
+    </script> -->
   </body>
 </html>
