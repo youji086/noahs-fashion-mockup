@@ -200,6 +200,9 @@ main {
 }
 
 @media screen and (min-width: 769px) {
+  main {
+    padding-top: 40px;
+  }
   main .wrap {
     max-width: 1000px;
     margin: 0 auto;
