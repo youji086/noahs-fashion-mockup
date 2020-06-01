@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>口座情報登録</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/icon_fonts.css" />
+    <link rel="stylesheet" href="../css/tabbar.css" />
+    <link rel="stylesheet" href="../css/card_register_bank.css" />
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">口座情報登録</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <main>
+      <div class="wrap">
+        <form id="bank-info" action="" method="post">
+          <p class="subtitle">口座情報の登録</p>
+          <div class="card">
+            <div class="item">
+              <span>これらの国の銀行に支払が可能</span>
+              <p>日本</p>
+            </div>
+            <div class="item">
+              <span>通貨</span>
+              <p>JPY(日本円)</p>
+            </div>
+          </div>
+          <p class="caution">
+            ※ 現在、<span class="danger">普通預金の口座のみ</span
+            >に対応しております
+          </p>
+          <p>
+            <label>
+              <span>口座名義(全角カタカナ)</span>
+              <input
+                type="text"
+                name="account_holder_name"
+                id="account_holder_name"
+                pattern="[\u30A1-\u30FF]*"
+                form="bank-info"
+                placeholder="タナカタロウ"
+                required
+              />
+            </label>
+          </p>
+          <!-- 口座種別は現状非表示 -->
+          <p style="display: none;">
+            <label>
+              <span>口座種別</span>
+              <select name="account_type" id="account_type">
+                <option selected></option>
+                <option value="ordinary_accounts">普通預金</option>
+              </select>
+            </label>
+          </p>
+          <!-- 口座種別は現状非表示　ここまで -->
+          <p>
+            <label>
+              <span>金融コード(半角数字４文字)</span>
+              <input
+                type="text"
+                name="bank_code"
+                id="bank_code"
+                form="bank-info"
+                placeholder="0001"
+                max="9999"
+                maxlength="4"
+                min="0"
+                pattern="\d{4}"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label>
+              <span>金融機関名</span>
+              <input
+                type="text"
+                name="bank_name"
+                id="bank_name"
+                form="bank-info"
+                placeholder="みずほ"
+                disabled
+              />
+            </label>
+          </p>
+          <p>
+            <label>
+              <span>支店コード(半角数字３文字)</span>
+              <input
+                type="text"
+                name="branch_code"
+                id="branch_code"
+                form="bank-info"
+                placeholder="001"
+                maxlength="3"
+                min="0"
+                max="999"
+                pattern="\d{3}"
+                required
+              />
+            </label>
+          </p>
+          <p>
+            <label>
+              <span>支店名</span>
+              <input
+                type="text"
+                name="branch_name"
+                id="branch_name"
+                form="bank-info"
+                placeholder="東京営業部"
+                disabled
+              />
+            </label>
+          </p>
+          <p>
+            <label>
+              <span>口座番号(半角数字７文字)</span>
+              <input
+                type="text"
+                name="account_number"
+                id="account_number"
+                pattern="\d{7}"
+                maxlength="7"
+                form="bank-info"
+                placeholder="1234567"
+                required
+              />
+            </label>
+          </p>
+
+          <input form="bank-info" type="submit" value="確認画面へ" />
+        </form>
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+
+    <script>
+      $(function () {
+        // handling bank code
+        $('#bank_code').keyup(function (e) {
+          if (
+            !(
+              (48 <= e.keyCode && e.keyCode <= 57) ||
+              e.keyCode == 91 ||
+              e.keyCode == 17
+            )
+          ) {
+            // 0 - 9, cmd, ctrl
+            return;
+          }
+
+          $('#bank_name').val('').attr('placeholder', ''); // empty
+
+          bank_code = $('#bank_code').val();
+
+          if (bank_code.length != 4) {
+            return;
+          }
+
+          $.getJSON(
+            'https://bank.teraren.com/banks/' + bank_code + '.json',
+            function (json) {
+              $('#bank_name').val(json.name);
+            }
+          ).fail(function (jqXHR, textStatus, errorThrown) {
+            $('#bank_name').val('');
+          });
+        });
+
+        // handling bank branch code
+        $('#branch_code').keyup(function (e) {
+          if (!(48 <= e.keyCode && e.keyCode <= 57)) {
+            // 0 - 9
+            return;
+          }
+
+          $('#branch_name').val('').attr('placeholder', ''); // empty
+
+          bank_code = $('#bank_code').val();
+          bank_branch = $('#branch_code').val();
+
+          if (bank_code.length != 4) {
+            return;
+          }
+
+          if (bank_branch.length != 3) {
+            return;
+          }
+
+          $.getJSON(
+            'http://bank.teraren.com/banks/' +
+              bank_code +
+              '/branches/' +
+              bank_branch +
+              '.json',
+            function (json) {
+              $('#branch_name').val(json.name);
+            }
+          ).fail(function (jqXHR, textStatus, errorThrown) {
+            $('#branch_name').val('').attr('placeholder', ''); // empty
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
