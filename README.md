@@ -25,6 +25,6 @@ Mockup - Noah's Fashion
 - [マイページ（ファッショニスタ）](https://teppei-hashimoto.github.io/noahs-fashion-mockup/mypage_fashionista.html)
   - [本人情報登録](https://teppei-hashimoto.github.io/noahs-fashion-mockup/fashionista_edit/card_register_account.html)
     - [本人情報確認](https://teppei-hashimoto.github.io/noahs-fashion-mockup/fashionista_edit/card_register_account_confirm.html)
-      - 口座情報登録
+      - [口座情報登録](https://teppei-hashimoto.github.io/noahs-fashion-mockup/fashionista_edit/card_register_bank.html)
         - 口座情報確認
           - 口座情報登録完了
