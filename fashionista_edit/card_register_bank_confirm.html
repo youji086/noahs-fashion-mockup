@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>口座情報登録</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/icon_fonts.css" />
+    <link rel="stylesheet" href="../css/tabbar.css" />
+    <link rel="stylesheet" href="../css/card_register_bank_confirm.css" />
+  </head>
+  <body>
+    <!-- ヘッダーここから -->
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">口座情報登録</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- ヘッダーここまで -->
+    <main>
+      <div class="wrap">
+        <h2 class="title">口座情報の確認</h2>
+        <div class="card-bank-info">
+          <div class="item">
+            <span>口座名義</span>
+            <p>タナカ　タロウ</p>
+          </div>
+          <input
+            type="hidden"
+            name="account_holder_name"
+            id="account_holder_name"
+            value="タナカ　タロウ"
+            form="register-bank"
+          />
+          <hr />
+          <div class="item">
+            <span>金融コード</span>
+            <p>0001</p>
+          </div>
+          <input
+            type="hidden"
+            name="bank_code"
+            id="bank_code"
+            value="0001"
+            form="register-bank"
+          />
+          <hr />
+          <div class="item">
+            <span>金融機関名</span>
+            <p>みずほ</p>
+          </div>
+          <input
+            type="hidden"
+            name="bank_name"
+            id="bank_name"
+            value="みずほ"
+            form="register-bank"
+          />
+          <hr />
+          <div class="item">
+            <span>支店コード</span>
+            <p>001</p>
+          </div>
+          <input
+            type="hidden"
+            name="branch_code"
+            id="branch_code"
+            value="001"
+            form="register-bank"
+          />
+          <hr />
+          <div class="item">
+            <span>支店名</span>
+            <p>東京営業部</p>
+          </div>
+          <input
+            type="hidden"
+            name="branch_name"
+            id="branch_name"
+            value="東京営業部"
+            form="register-bank"
+          />
+          <hr />
+          <div class="item">
+            <span>口座番号</span>
+            <p>1234567</p>
+          </div>
+          <input
+            type="hidden"
+            name="account_number"
+            id="account_number"
+            value="1234567"
+            form="register-bank"
+          />
+        </div>
+        <!-- カードここまで -->
+        <div class="buttons">
+          <form id="edit-bank" action="" method="post">
+            <input type="submit" value="戻る" />
+          </form>
+          <form id="register-bank" action="" method="post">
+            <input type="submit" value="完了する" />
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
