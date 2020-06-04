@@ -57,7 +57,7 @@
           <p class="subtitle">口座情報の登録</p>
           <div class="card">
             <div class="item">
-              <span>これらの国の銀行に支払が可能</span>
+              <span>国名</span>
               <p>日本</p>
             </div>
             <div class="item">
@@ -67,7 +67,7 @@
           </div>
           <p class="caution">
             ※ 現在、<span class="danger">普通預金の口座のみ</span
-            >に対応しております
+            >に対応しております。
           </p>
           <p>
             <label>
@@ -76,9 +76,9 @@
                 type="text"
                 name="account_holder_name"
                 id="account_holder_name"
-                pattern="[\u30A1-\u30FF]*"
+                pattern="[ァ-ンヴー|　|・]+$"
                 form="bank-info"
-                placeholder="タナカタロウ"
+                placeholder="タナカ　タロウ"
                 required
               />
             </label>
@@ -120,7 +120,7 @@
                 id="bank_name"
                 form="bank-info"
                 placeholder="みずほ"
-                disabled
+                required
               />
             </label>
           </p>
@@ -150,7 +150,7 @@
                 id="branch_name"
                 form="bank-info"
                 placeholder="東京営業部"
-                disabled
+                required
               />
             </label>
           </p>
