@@ -30,6 +30,7 @@ main {
   box-sizing: border-box;
   font-size: 1.6rem;
   padding: 0 5px;
+  height: 40px;
 }
 .my-form input[type='button'] {
   width: 75px;
@@ -71,6 +72,7 @@ main {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  margin-top: 20px;
 }
 .my-form select {
   border: 1px solid #555555;
@@ -82,6 +84,9 @@ main {
   display: flex;
   align-items: center;
   width: 50%;
+}
+#field-name p:first-of-type {
+  margin-top: 0px;
 }
 #field-name span {
   display: inline-block;
@@ -100,12 +105,19 @@ main {
 #field-birth {
   width: 100%;
 }
+#field-gender p,
+#field-birth p {
+  margin-top: 0px;
+}
 
 #field-birth label {
   display: flex;
   align-items: center;
 }
 
+#field-address p:first-of-type {
+  margin-top: 0px;
+}
 #field-address span {
   display: inline-block;
   width: 100%;
@@ -148,7 +160,7 @@ main {
   font-weight: normal;
   padding: 0 20px;
   line-height: 1;
-  margin-bottom: 10px;
+  margin: 0 0 10px;
 }
 #field-file .card {
   display: block;
@@ -233,7 +245,6 @@ main {
   }
   .my-form input[type='text'] {
     font-size: 1.8rem;
-    height: 23px;
   }
   .my-form select {
     height: 23px;
