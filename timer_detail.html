@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <title>コーディネートを提案しよう</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/icon_fonts.css" />
+    <link rel="stylesheet" href="./css/star-rating-svg.css" />
+    <link rel="stylesheet" href="./css/tabbar.css" />
+    <link rel="stylesheet" href="css/timer_detail.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div id="wrap-header">
+        <h1 id="logo">コーディネート提案</h1>
+        <nav id="menu">
+          <ul>
+            <li>
+              <a href="#" aria-label="探す" title="探す" class="active-menu"
+                ><span aria-hidden="true" class="icon-search"></span
+                ><span class="menu-search">探す</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="お気に入り" title="お気に入り"
+                ><span aria-hidden="true" class="icon-heart-o"></span
+                ><span class="menu-favorite">お気に入り</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="メッセージ" title="メッセージ"
+                ><span aria-hidden="true" class="icon-commenting-o"></span
+                ><span class="menu-message">メッセージ</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="予約確認" title="予約確認"
+                ><span aria-hidden="true" class="icon-event_note"></span
+                ><span class="menu-schedule">予約確認</span></a
+              >
+            </li>
+            <li>
+              <a href="#" aria-label="マイページ" title="マイページ"
+                ><span aria-hidden="true" class="icon-person_outline"></span
+                ><span class="menu-mypage">マイページ</span></a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <div class="wrap">
+        <div class="wrap-fshnst">
+          <a href="user_detail.php?id=1">
+            <img
+              src="./fashionista_edit/fashionist_images/woman-sample_1.jpg"
+              class="fshnst-img"
+            />
+            <p class="fshnst-name">あいうえおかきくけこ</p></a
+          >
+        </div>
+
+        <!-- スタイリング要望を確認するボタン -->
+        <form id="styling-request" action="" method="post">
+          <button form="styling-request">スタイリング要望を見る</button>
+        </form>
+
+        <!-- 実施日時、実施場所の表示 -->
+        <div class="reserve-info">
+          <p class="item">実施日時</p>
+          <p class="value">
+            2020年6月13日(土)<br class="newline" />
+            10:00 ~ 12:00
+          </p>
+          <hr />
+          <p class="item">実施場所</p>
+          <p class="value">渋谷</p>
+        </div>
+
+        <!-- タイマー -->
+        <div class="wrap-timer">
+          <p class="caution danger">※ 必ず合流時にタイマーを押しましょう</p>
+          <p id="default">
+            <span id="hours">02</span>：<span id="minutes">00</span>
+          </p>
+          <button id="button-start">スタート</button>
+        </div>
+        <!-- タイマー　ここまで -->
+        <!-- レビュー -->
+        <form id="review-user" class="hide" action="" method="post">
+          <h3>タイマーが終了しました</h3>
+          <p class="caution">解散してユーザーを評価しましょう</p>
+          <div id="wrap-rating">
+            <div id="star-rating-review" class="star-rating"></div>
+            <input type="hidden" name="ratingValue" value="" />
+          </div>
+          <input type="submit" value="送信" form="review-user" />
+        </form>
+        <!-- レビュー　ここまで -->
+        <!-- 予約詳細 -->
+        <div class="reserve-detail">
+          <p class="panel-title">予約詳細</p>
+          <div class="card">
+            <p class="item">予約番号</p>
+            <p class="value" id="reserve-id">pi_1GrJ8YEXnupkxJyrnalbCAkv</p>
+            <hr />
+            <p class="item">価格</p>
+            <p class="value">¥10,000/ 時間</p>
+            <hr />
+            <p class="item">所要時間</p>
+            <p class="value">2時間</p>
+            <hr />
+            <p class="item">合計(税込)</p>
+            <p class="value">¥20,000</p>
+            <hr />
+            <p class="item">予約日</p>
+            <p class="value">2020年6月7日</p>
+          </div>
+        </div>
+        <!-- 予約詳細　ここまで -->
+      </div>
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+    <!-- タイマー　スクリプト　読み込み -->
+    <script src="js/timer.js" defer></script>
+    <!-- review スクリプト -->
+    <script src="./js/jquery.star-rating-svg.js"></script>
+    <script>
+      let reviewRating = $('#star-rating-review');
+      let ratingValueNum;
+      // star-rating-svg の設定
+      reviewRating.starRating({
+        useFullStars: true,
+        totalStars: 5,
+        initialRating: 5,
+        starSize: 40,
+        disableAfterRate: false,
+        emptyColor: 'lightgray',
+        hoverColor: 'gold',
+        activeColor: 'gold',
+        ratedColor: 'gold',
+      });
+      // 初期表示 評価値：5
+      reviewRating.starRating('setRating', 5, true);
+      ratingValueNum = reviewRating.starRating('getRating');
+      document
+        .querySelector('input[name="ratingValue"]')
+        .setAttribute('value', Math.trunc(ratingValueNum));
+
+      // 星のクリックイベントにより、評価値を再設定
+      reviewRating.on('click', () => {
+        ratingValueNum = reviewRating.starRating('getRating');
+        document
+          .querySelector('input[name="ratingValue"]')
+          .setAttribute('value', Math.trunc(ratingValueNum));
+      });
+    </script>
+    <!-- 予約詳細アコーディオン　スクリプト -->
+    <script>
+      $('.reserve-detail .card').hide();
+      $('.reserve-detail .panel-title').click(function () {
+        $('.reserve-detail .card').slideToggle();
+      });
+    </script>
+  </body>
+</html>
