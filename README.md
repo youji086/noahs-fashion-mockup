@@ -18,6 +18,7 @@ Mockup - Noah's Fashion
 ***
 ## ファッショニスタ
 - タイマー
+  - [タイマー詳細](https://teppei-hashimoto.github.io/noahs-fashion-mockup/timer_detail.html)
 - [報酬](https://teppei-hashimoto.github.io/noahs-fashion-mockup/remuneration_list.html)
   - [報酬詳細](https://teppei-hashimoto.github.io/noahs-fashion-mockup/remuneration_detail.html)
 - メッセージ
