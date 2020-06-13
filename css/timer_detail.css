@@ -4,10 +4,8 @@ main {
   background-color: #ffffff;
   padding-bottom: 100px;
 }
-main div.wrap {
+main .wrap {
   padding: 0 20px;
-  max-width: 769px;
-  margin: auto;
 }
 main p {
   font-size: 1.6rem;
@@ -35,8 +33,6 @@ main .danger {
 
 .wrap-fshnst {
   width: 100%;
-  max-width: 480px;
-  margin: 0 auto;
   padding: 10px 0;
 }
 .fshnst-img {
@@ -192,24 +188,74 @@ main .danger {
   main p {
     font-size: 1.8rem;
   }
-  .title {
-    font-size: 2.8rem;
-    padding-bottom: 15px;
-  }
-  hr {
+  main hr {
     margin: 20px 0;
   }
+  main .wrap {
+    max-width: 769px;
+    margin: 0 auto;
+  }
+
   .fshnst-img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
   }
   .fshnst-name {
+    font-size: 2.4rem;
+  }
+
+  #styling-request button {
+    height: 45px;
+  }
+  #styling-request button:hover {
+    cursor: pointer;
+  }
+
+  .reserve-info {
+    box-sizing: border-box;
+    margin: 20px 0;
+  }
+
+  .wrap-timer .caution {
+    font-size: 1.4rem;
+  }
+  .wrap-timer #default {
+    font-size: 5.6rem;
+  }
+  .wrap-timer #button-start {
+    cursor: pointer;
+  }
+
+  #review-user {
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.16);
+  }
+  #review-user h3 {
+    font-size: 3.6rem;
+  }
+  #review-user .caution {
+    font-size: 1.4rem;
+  }
+  #review-user .star-rating {
+    margin-top: 20px;
+  }
+  #review-user input[type='submit'] {
+    width: 350px;
+    height: 60px;
+    font-size: 2.8rem;
+  }
+  #review-user input[type='submit']:hover {
+    cursor: pointer;
+  }
+
+  .reserve-detail {
+    margin-top: 60px;
+  }
+  .reserve-detail .panel-title {
     font-size: 2.2rem;
   }
-  .card {
-    padding: 20px 40px;
-  }
-  .newline {
-    display: none;
+  .reserve-detail .panel-title:hover {
+    cursor: pointer;
   }
 }
